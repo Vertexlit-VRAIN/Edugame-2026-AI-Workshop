@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+
 /* ─── Design Tokens ─────────────────────────────────────────────────── */
 :root {
   --bg: #faf6f0;
@@ -15,6 +17,7 @@
   --amber-dim: rgba(200, 75, 49, 0.10);
   --green: #3d7a52;
   --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --serif: 'Lora', Georgia, 'Times New Roman', serif;
   --mono: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
 }
 
@@ -146,13 +149,16 @@ body::before {
   opacity: 0.7;
   align-self: flex-start;
   margin-bottom: 0.7rem;
+  border-top: 2px solid currentColor;
+  padding-top: 0.55rem;
 }
 
 .section-title {
+  font-family: var(--serif);
   font-size: clamp(2rem, 3.8vw, 3rem);
   font-weight: 700;
-  letter-spacing: -0.025em;
-  line-height: 1.1;
+  letter-spacing: -0.01em;
+  line-height: 1.12;
   margin-bottom: 2.8rem;
   align-self: flex-start;
 }
@@ -177,9 +183,10 @@ body::before {
 }
 
 h1.big {
+  font-family: var(--serif);
   font-size: clamp(3rem, 7vw, 5.5rem);
-  font-weight: 800;
-  letter-spacing: -0.035em;
+  font-weight: 700;
+  letter-spacing: -0.015em;
   line-height: 1.05;
   background: linear-gradient(160deg, #1a1410 0%, rgba(26, 20, 16, 0.65) 100%);
   -webkit-background-clip: text;
@@ -326,9 +333,10 @@ h1.big {
 }
 
 .stat-big {
+  font-family: var(--serif);
   font-size: clamp(2.2rem, 4.5vw, 3.4rem);
-  font-weight: 800;
-  letter-spacing: -0.04em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   margin-bottom: 0.5rem;
   line-height: 1;
 }
@@ -496,9 +504,10 @@ h1.big {
 }
 
 .ring-title {
+  font-family: var(--serif);
   font-size: clamp(1.9rem, 3.5vw, 2.6rem);
   font-weight: 700;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.01em;
   margin-bottom: 3.8rem;
   text-align: center;
 }
@@ -784,9 +793,10 @@ h1.big {
 }
 
 .demo-h {
+  font-family: var(--serif);
   font-size: clamp(2.2rem, 4.5vw, 3.2rem);
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   margin-bottom: 0.4rem;
 }
 
