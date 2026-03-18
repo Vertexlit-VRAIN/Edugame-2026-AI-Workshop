@@ -1,272 +1,327 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Agents in Education</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div id="deck">
+  <div id="deck">
 
-  <!-- ══════════════════════════════════════════════════════════════════════
+    <!-- ══════════════════════════════════════════════════════════════════════
        SLIDE 1 · TITLE
   ═══════════════════════════════════════════════════════════════════════ -->
-  <section class="slide active" id="s1">
-    <div class="title-block">
-      <div class="title-super">// AI Workshop &nbsp;·&nbsp; 2026</div>
-      <h1 class="big">AI Agents<br>in Education</h1>
-      <p class="title-sub">From Prompts to Autonomous Systems</p>
-      <div class="live-badge">
-        <span class="live-dot"></span>
-        Built with Claude Cowork — live demonstration
+    <section class="slide active" id="s1">
+      <div class="title-block">
+        <div class="title-super">// AI Workshop &nbsp;·&nbsp; 2026</div>
+        <h1 class="big">AI Agents<br>in Education</h1>
+        <p class="title-sub">From Prompts to Autonomous Systems</p>
+        <div class="live-badge">
+          <span class="live-dot"></span>
+          Built with Claude Cowork — live demonstration
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ══════════════════════════════════════════════════════════════════════
-       SLIDE 2 · WHAT IS AN AGENT?
+    <!-- ══════════════════════════════════════════════════════════════════════
+       SLIDE 2 · WHY THIS MATTERS FOR FACULTY
   ═══════════════════════════════════════════════════════════════════════ -->
-  <section class="slide" id="s2">
-    <div style="width:100%;max-width:920px">
-      <div class="eyebrow">// Foundations</div>
-      <h2 class="section-title">What Is an Agent?</h2>
-      <div class="compare-grid">
+    <section class="slide" id="s3">
+      <div style="width:100%;max-width:1080px;height:82vh;display:flex;flex-direction:column">
+        <div class="eyebrow">// The Pressure on Education</div>
+        <h2 class="section-title" style="margin-bottom:1.6rem">The Classroom Is Already There</h2>
 
-        <div class="ccard">
-          <div class="ccard-label">Chatbot &mdash; one turn at a time</div>
-          <ul class="step-list">
-            <li class="step-item"><span class="sn">01</span> You write a prompt</li>
-            <li class="step-item"><span class="sn">02</span> The model generates text</li>
-            <li class="step-item"><span class="sn">03</span> You read the output</li>
-            <li class="step-item"><span class="sn">04</span> You decide what to do next</li>
-            <li class="step-item"><span class="sn">05</span> You write the next prompt</li>
-            <li class="step-item"><span class="sn">—</span> Repeat until done</li>
-          </ul>
+        <div style="display:grid;grid-template-columns:1fr 1.65fr;gap:2.4rem;align-items:stretch;flex:1">
+
+          <!-- ── Left: compact stats ───────────────────────────────── -->
+          <div style="display:flex;flex-direction:column;gap:0">
+
+            <div class="scard"
+              style="padding:2rem 1.6rem;flex:1;display:flex;flex-direction:column;justify-content:center;border-radius:12px 12px 0 0;border-bottom:none">
+              <div class="stat-big" style="font-size:clamp(2.2rem,4vw,3.2rem)">92%</div>
+              <div class="stat-text">of undergraduates use AI for academic work — up from 66% in one year</div>
+              <div class="stat-src"><a href="https://www.hepi.ac.uk/reports/student-generative-ai-survey-2025/"
+                  target="_blank" class="stat-link">HEPI, Feb 2025</a></div>
+            </div>
+
+            <div class="scard"
+              style="padding:2rem 1.6rem;flex:1;display:flex;flex-direction:column;justify-content:center;border-radius:0 0 12px 12px">
+              <div class="stat-big" style="font-size:clamp(2.2rem,4vw,3.2rem);color:var(--purple)">Today</div>
+              <div class="stat-text">An agent can log into a course platform, complete assignments, and submit them with
+                no human action</div>
+              <div class="stat-src"><a
+                  href="https://www.insidehighered.com/news/tech-innovation/artificial-intelligence/2026/02/26/agentic-ai-can-complete-whole-courses-now"
+                  target="_blank" class="stat-link">Inside Higher Ed, Feb 2026</a></div>
+            </div>
+
+          </div>
+
+          <!-- ── Right: HEPI bar chart ─────────────────────────────── -->
+          <div style="display:flex;flex-direction:column;justify-content:space-between">
+            <div class="chart-title">How students use AI for assessments</div>
+            <div class="chart-legend">
+              <span class="legend-dot" style="background:var(--cyan)"></span><span>2025</span>
+              <span class="legend-dot" style="background:var(--border-bright);margin-left:1rem"></span><span>2024</span>
+            </div>
+
+            <div class="hepi-chart">
+
+              <div class="chart-row">
+                <div class="chart-label">Explain concepts</div>
+                <div class="chart-bars">
+                  <div class="chart-bar bar-25" style="width:58%"><span>58%</span></div>
+                  <div class="chart-bar bar-24" style="width:36%"><span>36%</span></div>
+                </div>
+              </div>
+
+              <div class="chart-row">
+                <div class="chart-label">Summarise an article</div>
+                <div class="chart-bars">
+                  <div class="chart-bar bar-25" style="width:48%"><span>48%</span></div>
+                  <div class="chart-bar bar-24" style="width:24%"><span>24%</span></div>
+                </div>
+              </div>
+
+              <div class="chart-row">
+                <div class="chart-label">Suggest research ideas</div>
+                <div class="chart-bars">
+                  <div class="chart-bar bar-25" style="width:41%"><span>41%</span></div>
+                  <div class="chart-bar bar-24" style="width:25%"><span>25%</span></div>
+                </div>
+              </div>
+
+              <div class="chart-row">
+                <div class="chart-label">Use in assessment (edited)</div>
+                <div class="chart-bars">
+                  <div class="chart-bar bar-25" style="width:25%"><span>25%</span></div>
+                  <div class="chart-bar bar-24" style="width:13%"><span>13%</span></div>
+                </div>
+              </div>
+
+              <div class="chart-row">
+                <div class="chart-label">Use without any editing</div>
+                <div class="chart-bars">
+                  <div class="chart-bar bar-25 bar-warn" style="width:8%"><span>8%</span></div>
+                  <div class="chart-bar bar-24" style="width:3%"><span>3%</span></div>
+                </div>
+              </div>
+
+              <div class="chart-row">
+                <div class="chart-label">None of the above</div>
+                <div class="chart-bars">
+                  <div class="chart-bar bar-25 bar-none" style="width:12%"><span>12%</span></div>
+                  <div class="chart-bar bar-24 bar-none-24" style="width:47%"><span>47%</span></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
-
-        <div class="ccard highlight">
-          <div class="ccard-label">Agent &mdash; goal to result</div>
-          <ul class="step-list">
-            <li class="step-item"><span class="sn">01</span> You define a goal</li>
-            <li class="step-item"><span class="sn">02</span> The agent plans the steps</li>
-            <li class="step-item"><span class="sn">03</span> The agent uses tools — search, code, files</li>
-            <li class="step-item"><span class="sn">04</span> The agent monitors its own progress</li>
-            <li class="step-item"><span class="sn">05</span> The agent delivers the result</li>
-            <li class="step-item"><span class="sn">—</span> You review</li>
-          </ul>
-        </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ══════════════════════════════════════════════════════════════════════
-       SLIDE 3 · WHY NOW?
-  ═══════════════════════════════════════════════════════════════════════ -->
-  <section class="slide" id="s3">
-    <div style="width:100%;max-width:960px">
-      <div class="eyebrow">// Context</div>
-      <h2 class="section-title">Why This Matters Now</h2>
-      <div class="stats-grid">
-        <div class="scard">
-          <div class="stat-big">84%</div>
-          <div class="stat-text">of university students use AI in coursework — yet only 18% feel professionally ready</div>
-          <div class="stat-src">2026 survey data</div>
-        </div>
-        <div class="scard">
-          <div class="stat-big">40%</div>
-          <div class="stat-text">of enterprise applications will embed task-specific agents by end of 2026</div>
-          <div class="stat-src">Gartner, 2026</div>
-        </div>
-        <div class="scard">
-          <div class="stat-big">Now</div>
-          <div class="stat-text">Autonomous agents can complete entire online courses without human intervention</div>
-          <div class="stat-src">Inside Higher Ed, Feb 2026</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════════════════════════════════
+    <!-- ══════════════════════════════════════════════════════════════════════
        SLIDE 4 · RING MENU — THE DEMOS
   ═══════════════════════════════════════════════════════════════════════ -->
-  <section class="slide" id="s4">
-    <div class="ring-slide">
-      <h2 class="ring-title">Three Demonstrations</h2>
-      <div class="ring-stage">
-        <div class="ring-ground"></div>
+    <section class="slide" id="s4">
+      <div class="ring-slide">
+        <h2 class="ring-title">Three Demonstrations</h2>
+        <div class="ring-stage">
+          <div class="ring-ground"></div>
 
-        <div class="ring" id="ring">
+          <div class="ring" id="ring">
 
-          <div class="ritem front" data-demo="1">
-            <div class="ritem-icon">&#62;_</div>
-            <div class="ritem-label">Prompt<br>Design</div>
-            <div class="ritem-enter">[ Enter ]</div>
+            <div class="ritem front" data-demo="1">
+              <div class="ritem-icon">&#62;_</div>
+              <div class="ritem-label">System 2<br>Prompting</div>
+              <div class="ritem-enter">[ Enter ]</div>
+            </div>
+
+            <div class="ritem side" data-demo="2">
+              <div class="ritem-icon">&#9635;</div>
+              <div class="ritem-label">Claude<br>Cowork</div>
+              <div class="ritem-enter">[ Enter ]</div>
+            </div>
+
+            <div class="ritem back" data-demo="3">
+              <div class="ritem-icon">&#9881;</div>
+              <div class="ritem-label">Open<br>Claw</div>
+              <div class="ritem-enter">[ Enter ]</div>
+            </div>
+
           </div>
+        </div>
 
-          <div class="ritem side" data-demo="2">
-            <div class="ritem-icon">&#9635;</div>
-            <div class="ritem-label">Claude<br>Cowork</div>
-            <div class="ritem-enter">[ Enter ]</div>
-          </div>
-
-          <div class="ritem back" data-demo="3">
-            <div class="ritem-icon">&#9881;</div>
-            <div class="ritem-label">Open<br>Claw</div>
-            <div class="ritem-enter">[ Enter ]</div>
-          </div>
-
+        <div class="ring-info">
+          <div id="rinfo-name">System 2 Prompting</div>
+          <div id="rinfo-desc">Activating deliberative reasoning — specificity determines whether the model thinks or
+            just reacts</div>
         </div>
       </div>
+    </section>
 
-      <div class="ring-info">
-        <div id="rinfo-name">Prompt Design</div>
-        <div id="rinfo-desc">The human in full control — goal quality determines output quality</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════════════════════════════════
-       DEMO 1 · PROMPT DESIGN
+    <!-- ══════════════════════════════════════════════════════════════════════
+       DEMO 1 · SYSTEM 2 PROMPTING
   ═══════════════════════════════════════════════════════════════════════ -->
-  <section class="slide" id="d1">
-    <button class="back-btn" onclick="backToRing()">&#8592; Back to demos</button>
-    <div class="demo-wrapper">
-      <div class="demo-num" style="color:var(--cyan)">// Demo 01</div>
-      <h2 class="demo-h">Prompt Design</h2>
-      <p class="demo-sub">The human in full control — goal quality determines output quality</p>
-      <div class="demo-cols">
-        <div class="dcard">
-          <div class="dcard-lbl">What you show</div>
-          <div class="dcard-body">A structured multi-role prompt given to Claude in a single turn. Assign a persona, a context, and a compound task — then compare the output to a vague version of the same question side by side.</div>
+    <section class="slide" id="d1">
+      <button class="back-btn" onclick="backToRing()">&#8592; Back to demos</button>
+      <div class="demo-wrapper">
+        <div class="demo-num" style="color:var(--cyan)">// Demo 01</div>
+        <h2 class="demo-h">System 2 Prompting</h2>
+        <p class="demo-sub">Activating deliberative reasoning — specificity determines whether the model thinks or just
+          reacts</p>
+        <div class="demo-cols">
+          <div class="dcard">
+            <div class="dcard-lbl">What you show</div>
+            <div class="dcard-body">Two prompts, same question. The vague version triggers a reflexive, automatic
+              response — System 1. The structured version, with explicit role, context, and chain-of-thought
+              instruction, forces the model to pause, generate reasoning paths, and evaluate before answering — System
+              2.</div>
+          </div>
+          <div class="dcard">
+            <div class="dcard-lbl">Why it lands</div>
+            <div class="dcard-body">The output difference is visible in seconds. Faculty recognise it immediately as
+              analogous to the difference between an ambiguous assignment brief and a well-scoped one. The audience just
+              learned that AI can reach System 2 — this shows the switch that turns it on.</div>
+          </div>
         </div>
-        <div class="dcard">
-          <div class="dcard-lbl">Why it lands</div>
-          <div class="dcard-body">The quality difference is immediately visible to any educator. It also shows the boundary: where specificity helps, and where domain expertise is still the only answer.</div>
+        <div class="insight" style="border-left:3px solid var(--cyan)">
+          <div class="insight-lbl">Key Insight</div>
+          <div class="insight-body">AI no longer defaults to its first automatic prediction — but only if you give it a
+            reason not to. That reason is the prompt. Prompt design is a teachable pedagogical skill, not a technical
+            one.</div>
         </div>
       </div>
-      <div class="insight" style="border-left:3px solid var(--cyan)">
-        <div class="insight-lbl">Key Insight</div>
-        <div class="insight-body">Writing the prompt IS the design decision. That is a teachable skill, not a technical one.</div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ══════════════════════════════════════════════════════════════════════
+    <!-- ══════════════════════════════════════════════════════════════════════
        DEMO 2 · CLAUDE COWORK
   ═══════════════════════════════════════════════════════════════════════ -->
-  <section class="slide" id="d2">
-    <button class="back-btn" onclick="backToRing()">&#8592; Back to demos</button>
-    <div class="demo-wrapper">
-      <div class="demo-num" style="color:var(--purple)">// Demo 02</div>
-      <h2 class="demo-h">Claude Cowork</h2>
-      <p class="demo-sub">The agent in the production pipeline — you supervise, not execute</p>
-      <div class="demo-cols">
-        <div class="dcard">
-          <div class="dcard-lbl">What you show</div>
-          <div class="dcard-body">The BIP AI Workshop "Prompt Wars" — a complete, offline interactive workshop built with Cowork. Three structured parts, custom visual design, no code written by hand.</div>
+    <section class="slide" id="d2">
+      <button class="back-btn" onclick="backToRing()">&#8592; Back to demos</button>
+      <div class="demo-wrapper">
+        <div class="demo-num" style="color:var(--purple)">// Demo 02</div>
+        <h2 class="demo-h">Claude Cowork</h2>
+        <p class="demo-sub">The Agent Action Loop made visible — observe, generate sub-programs, execute, evaluate</p>
+        <div class="demo-cols">
+          <div class="dcard">
+            <div class="dcard-lbl">What you show</div>
+            <div class="dcard-body">The BIP AI Workshop — a complete, offline interactive educational tool built in a
+              single Cowork session. The agent observed the task, generated intermediate file structures, executed
+              across the filesystem using its full toolkit, and evaluated its own output. No code written by hand. This
+              presentation is also a product of that same loop.</div>
+          </div>
+          <div class="dcard">
+            <div class="dcard-lbl">Why it lands</div>
+            <div class="dcard-body">The audience sees a real artefact produced by an agent cycling through the exact
+              loop described in the theory. The agent toolkit — file access, code execution, web browser — was used
+              autonomously to produce something any educator could deploy tomorrow. It answers "but can it do something
+              I would actually use?"</div>
+          </div>
         </div>
-        <div class="dcard">
-          <div class="dcard-lbl">Why it lands</div>
-          <div class="dcard-body">It answers "but can it do something I'd actually use?" with a real artefact the audience can see, navigate, and immediately recognise as production-ready educational content.</div>
+        <div class="insight" style="border-left:3px solid var(--purple)">
+          <div class="insight-lbl">Key Insight</div>
+          <div class="insight-body">The agent holds the toolkit. The faculty holds the goal. The constraint on what an
+            educator can produce is no longer technical — it is entirely the quality of the goal specification.</div>
         </div>
       </div>
-      <div class="insight" style="border-left:3px solid var(--purple)">
-        <div class="insight-lbl">Key Insight</div>
-        <div class="insight-body">The constraint on what an educator can produce is no longer technical. It is now entirely the quality of the goal specification.</div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ══════════════════════════════════════════════════════════════════════
+    <!-- ══════════════════════════════════════════════════════════════════════
        DEMO 3 · OPENCLAW
   ═══════════════════════════════════════════════════════════════════════ -->
-  <section class="slide" id="d3">
-    <button class="back-btn" onclick="backToRing()">&#8592; Back to demos</button>
-    <div class="demo-wrapper">
-      <div class="demo-num" style="color:var(--amber)">// Demo 03</div>
-      <h2 class="demo-h">OpenClaw</h2>
-      <p class="demo-sub">The human at the perimeter — always-on, always reachable</p>
-      <div class="demo-cols">
-        <div class="dcard">
-          <div class="dcard-lbl">What you show</div>
-          <div class="dcard-body">From a phone, send one Telegram message to a running OpenClaw instance. It searches, processes, and delivers a finished file to the Desktop — without any further input.</div>
+    <section class="slide" id="d3">
+      <button class="back-btn" onclick="backToRing()">&#8592; Back to demos</button>
+      <div class="demo-wrapper">
+        <div class="demo-num" style="color:var(--amber)">// Demo 03</div>
+        <h2 class="demo-h">OpenClaw</h2>
+        <p class="demo-sub">The Delegation Architecture in practice — one instruction, distributed execution, no human
+          bottleneck</p>
+        <div class="demo-cols">
+          <div class="dcard">
+            <div class="dcard-lbl">What you show</div>
+            <div class="dcard-body">From a phone, one Telegram message reaches a local OpenClaw instance. The Main Agent
+              receives the goal, decomposes it into sub-activities — search, process, synthesize — coordinates their
+              execution, and delivers a finished file to the Desktop. No further human input at any stage.</div>
+          </div>
+          <div class="dcard">
+            <div class="dcard-lbl">Why it lands</div>
+            <div class="dcard-body">This is the Fractal Intelligence Framework running on a laptop, deployed in an
+              afternoon. The theory described parallel specialized agents operating without a human bottleneck — this is
+              what that looks like as a working system, open-source, locally controlled, and institutionally deployable
+              by any faculty member.</div>
+          </div>
         </div>
-        <div class="dcard">
-          <div class="dcard-lbl">Why it lands</div>
-          <div class="dcard-body">An open-source agent, running on a laptop, deployed in an afternoon, reachable from any device. It demonstrates the logical endpoint of the agentic direction — and forces the governance question.</div>
+        <div class="insight" style="border-left:3px solid var(--amber)">
+          <div class="insight-lbl">Key Insight</div>
+          <div class="insight-body">The barrier to a Delegation Architecture on institutional infrastructure is now very
+            low. That is both the opportunity and the governance question that cannot stay theoretical.</div>
         </div>
       </div>
-      <div class="insight" style="border-left:3px solid var(--amber)">
-        <div class="insight-lbl">Key Insight</div>
-        <div class="insight-body">The barrier to autonomous AI acting on institutional infrastructure is now very low. That is both an opportunity and a policy question that needs to be on the faculty agenda.</div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ══════════════════════════════════════════════════════════════════════
-       SLIDE 5 · WHAT CHANGES FOR FACULTY
+    <!-- ══════════════════════════════════════════════════════════════════════
+       SLIDE 5 · IMPLICATIONS + DISCUSSION
   ═══════════════════════════════════════════════════════════════════════ -->
-  <section class="slide" id="s5">
-    <div style="width:100%;max-width:760px">
-      <div class="eyebrow">// Implications</div>
-      <h2 class="section-title">What Changes for Faculty</h2>
-      <div class="levels">
-        <div class="lv">
-          <div class="lv-n">01</div>
-          <div>
-            <div class="lv-title">Specify</div>
-            <div class="lv-desc">Define the goal clearly enough that an agent can pursue it without constant correction. This is a design skill that needs to be taught explicitly.</div>
+    <section class="slide" id="s5">
+      <div style="width:100%;max-width:1000px">
+        <div class="eyebrow">// Implications &amp; Discussion</div>
+        <h2 class="section-title" style="margin-bottom:1.6rem">What Changes — What to Discuss</h2>
+
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.8rem">
+
+          <div class="ccard" style="border-color:rgba(0,153,187,0.28);background:var(--cyan-dim);padding:1.3rem">
+            <div class="ccard-label" style="color:var(--cyan)">01 &mdash; Specify</div>
+            <div style="font-size:1.08rem;color:var(--text);line-height:1.55">Define the goal clearly enough that an
+              agent can pursue it. This is a design skill that can be taught.</div>
+          </div>
+
+          <div class="ccard" style="border-color:rgba(108,92,231,0.28);background:var(--purple-dim);padding:1.3rem">
+            <div class="ccard-label" style="color:var(--purple)">02 &mdash; Supervise</div>
+            <div style="font-size:1.08rem;color:var(--text);line-height:1.55">Intervene with domain knowledge the agent
+              cannot replicate. Identify when it is confident and wrong.</div>
+          </div>
+
+          <div class="ccard" style="border-color:rgba(196,122,10,0.28);background:var(--amber-dim);padding:1.3rem">
+            <div class="ccard-label" style="color:var(--amber)">03 &mdash; Review</div>
+            <div style="font-size:1.08rem;color:var(--text);line-height:1.55">Evaluate output against standards the
+              agent does not hold. Faculty becomes quality assurance, not execution.</div>
+          </div>
+
+        </div>
+
+        <div class="disc-block" style="text-align:left;align-items:flex-start;max-width:100%">
+          <p style="font-size:clamp(1.1rem,2vw,1.35rem);font-weight:600;color:var(--text);margin-bottom:1rem">"If an
+            agent can complete an entire course — what is learning for?"</p>
+          <div class="disc-items" style="max-width:100%">
+            <div class="disc-item">How do we redesign assessments around process rather than product?</div>
+            <div class="disc-item">What does academic integrity mean when anyone can run a local agent?</div>
+            <div class="disc-item">What AI literacy should every graduate hold by 2027?</div>
           </div>
         </div>
-        <div class="lv">
-          <div class="lv-n">02</div>
-          <div>
-            <div class="lv-title">Supervise</div>
-            <div class="lv-desc">Monitor execution. Identify when the agent is confident and wrong. Intervene with the domain knowledge the agent cannot replicate.</div>
-          </div>
-        </div>
-        <div class="lv">
-          <div class="lv-n">03</div>
-          <div>
-            <div class="lv-title">Review</div>
-            <div class="lv-desc">Evaluate output against standards the agent does not hold. The faculty role becomes quality assurance, not step-by-step execution.</div>
-          </div>
-        </div>
+
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ══════════════════════════════════════════════════════════════════════
-       SLIDE 6 · DISCUSSION
-  ═══════════════════════════════════════════════════════════════════════ -->
-  <section class="slide" id="s6">
-    <div class="disc-block">
-      <div class="eyebrow" style="align-self:center">// Discussion</div>
-      <h2 style="font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:700;margin-top:0.5rem">The Question to Take Away</h2>
-      <p class="disc-q">"If an agent can complete an entire course,<br>what is learning for?"</p>
-      <div class="disc-items">
-        <div class="disc-item">How do we redesign assessments around process rather than product?</div>
-        <div class="disc-item">What does academic integrity mean when anyone can run a local agent?</div>
-        <div class="disc-item">What AI literacy should every graduate hold by 2027?</div>
-      </div>
-    </div>
-  </section>
+  </div><!-- #deck -->
 
-</div><!-- #deck -->
+  <!-- ── Navigation Bar ──────────────────────────────────────────────────── -->
+  <div id="nav">
+    <button id="btn-prev" onclick="prev()">&#8592;</button>
+    <span id="counter">1&thinsp;/&thinsp;4</span>
+    <button id="btn-next" onclick="next()">&#8594;</button>
+  </div>
 
-<!-- ── Navigation Bar ──────────────────────────────────────────────────── -->
-<div id="nav">
-  <button id="btn-prev" onclick="prev()">&#8592;</button>
-  <span id="counter">1&thinsp;/&thinsp;6</span>
-  <button id="btn-next" onclick="next()">&#8594;</button>
-</div>
+  <div id="hint">&#9664;&#9654; navigate &nbsp;&middot;&nbsp; on ring: &#9664;&#9654; rotate &nbsp;&middot;&nbsp; ENTER
+    select &nbsp;&middot;&nbsp; ESC back</div>
 
-<div id="hint">&#9664;&#9654; navigate &nbsp;&middot;&nbsp; on ring: &#9664;&#9654; rotate &nbsp;&middot;&nbsp; ENTER select &nbsp;&middot;&nbsp; ESC back</div>
-
-<script src="deck.js"></script>
+  <script src="deck.js"></script>
 
 </body>
+
 </html>
