@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Agents in Education</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="deck">
+
+  <!-- ══════════════════════════════════════════════════════════════════════
+       SLIDE 1 · TITLE
+  ═══════════════════════════════════════════════════════════════════════ -->
+  <section class="slide active" id="s1">
+    <div class="title-block">
+      <div class="title-super">// AI Workshop &nbsp;·&nbsp; 2026</div>
+      <h1 class="big">AI Agents<br>in Education</h1>
+      <p class="title-sub">From Prompts to Autonomous Systems</p>
+      <div class="live-badge">
+        <span class="live-dot"></span>
+        Built with Claude Cowork — live demonstration
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════════════
+       SLIDE 2 · WHAT IS AN AGENT?
+  ═══════════════════════════════════════════════════════════════════════ -->
+  <section class="slide" id="s2">
+    <div style="width:100%;max-width:920px">
+      <div class="eyebrow">// Foundations</div>
+      <h2 class="section-title">What Is an Agent?</h2>
+      <div class="compare-grid">
+
+        <div class="ccard">
+          <div class="ccard-label">Chatbot &mdash; one turn at a time</div>
+          <ul class="step-list">
+            <li class="step-item"><span class="sn">01</span> You write a prompt</li>
+            <li class="step-item"><span class="sn">02</span> The model generates text</li>
+            <li class="step-item"><span class="sn">03</span> You read the output</li>
+            <li class="step-item"><span class="sn">04</span> You decide what to do next</li>
+            <li class="step-item"><span class="sn">05</span> You write the next prompt</li>
+            <li class="step-item"><span class="sn">—</span> Repeat until done</li>
+          </ul>
+        </div>
+
+        <div class="ccard highlight">
+          <div class="ccard-label">Agent &mdash; goal to result</div>
+          <ul class="step-list">
+            <li class="step-item"><span class="sn">01</span> You define a goal</li>
+            <li class="step-item"><span class="sn">02</span> The agent plans the steps</li>
+            <li class="step-item"><span class="sn">03</span> The agent uses tools — search, code, files</li>
+            <li class="step-item"><span class="sn">04</span> The agent monitors its own progress</li>
+            <li class="step-item"><span class="sn">05</span> The agent delivers the result</li>
+            <li class="step-item"><span class="sn">—</span> You review</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════════════
+       SLIDE 3 · WHY NOW?
+  ═══════════════════════════════════════════════════════════════════════ -->
+  <section class="slide" id="s3">
+    <div style="width:100%;max-width:960px">
+      <div class="eyebrow">// Context</div>
+      <h2 class="section-title">Why This Matters Now</h2>
+      <div class="stats-grid">
+        <div class="scard">
+          <div class="stat-big">84%</div>
+          <div class="stat-text">of university students use AI in coursework — yet only 18% feel professionally ready</div>
+          <div class="stat-src">2026 survey data</div>
+        </div>
+        <div class="scard">
+          <div class="stat-big">40%</div>
+          <div class="stat-text">of enterprise applications will embed task-specific agents by end of 2026</div>
+          <div class="stat-src">Gartner, 2026</div>
+        </div>
+        <div class="scard">
+          <div class="stat-big">Now</div>
+          <div class="stat-text">Autonomous agents can complete entire online courses without human intervention</div>
+          <div class="stat-src">Inside Higher Ed, Feb 2026</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════════════
+       SLIDE 4 · RING MENU — THE DEMOS
+  ═══════════════════════════════════════════════════════════════════════ -->
+  <section class="slide" id="s4">
+    <div class="ring-slide">
+      <h2 class="ring-title">Three Demonstrations</h2>
+      <div class="ring-stage">
+        <div class="ring-ground"></div>
+
+        <div class="ring" id="ring">
+
+          <div class="ritem front" data-demo="1">
+            <div class="ritem-icon">&#62;_</div>
+            <div class="ritem-label">Prompt<br>Design</div>
+            <div class="ritem-enter">[ Enter ]</div>
+          </div>
+
+          <div class="ritem side" data-demo="2">
+            <div class="ritem-icon">&#9635;</div>
+            <div class="ritem-label">Claude<br>Cowork</div>
+            <div class="ritem-enter">[ Enter ]</div>
+          </div>
+
+          <div class="ritem back" data-demo="3">
+            <div class="ritem-icon">&#9881;</div>
+            <div class="ritem-label">Open<br>Claw</div>
+            <div class="ritem-enter">[ Enter ]</div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="ring-info">
+        <div id="rinfo-name">Prompt Design</div>
+        <div id="rinfo-desc">The human in full control — goal quality determines output quality</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════════════
+       DEMO 1 · PROMPT DESIGN
+  ═══════════════════════════════════════════════════════════════════════ -->
+  <section class="slide" id="d1">
+    <button class="back-btn" onclick="backToRing()">&#8592; Back to demos</button>
+    <div class="demo-wrapper">
+      <div class="demo-num" style="color:var(--cyan)">// Demo 01</div>
+      <h2 class="demo-h">Prompt Design</h2>
+      <p class="demo-sub">The human in full control — goal quality determines output quality</p>
+      <div class="demo-cols">
+        <div class="dcard">
+          <div class="dcard-lbl">What you show</div>
+          <div class="dcard-body">A structured multi-role prompt given to Claude in a single turn. Assign a persona, a context, and a compound task — then compare the output to a vague version of the same question side by side.</div>
+        </div>
+        <div class="dcard">
+          <div class="dcard-lbl">Why it lands</div>
+          <div class="dcard-body">The quality difference is immediately visible to any educator. It also shows the boundary: where specificity helps, and where domain expertise is still the only answer.</div>
+        </div>
+      </div>
+      <div class="insight" style="border-left:3px solid var(--cyan)">
+        <div class="insight-lbl">Key Insight</div>
+        <div class="insight-body">Writing the prompt IS the design decision. That is a teachable skill, not a technical one.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════════════
+       DEMO 2 · CLAUDE COWORK
+  ═══════════════════════════════════════════════════════════════════════ -->
+  <section class="slide" id="d2">
+    <button class="back-btn" onclick="backToRing()">&#8592; Back to demos</button>
+    <div class="demo-wrapper">
+      <div class="demo-num" style="color:var(--purple)">// Demo 02</div>
+      <h2 class="demo-h">Claude Cowork</h2>
+      <p class="demo-sub">The agent in the production pipeline — you supervise, not execute</p>
+      <div class="demo-cols">
+        <div class="dcard">
+          <div class="dcard-lbl">What you show</div>
+          <div class="dcard-body">The BIP AI Workshop "Prompt Wars" — a complete, offline interactive workshop built with Cowork. Three structured parts, custom visual design, no code written by hand.</div>
+        </div>
+        <div class="dcard">
+          <div class="dcard-lbl">Why it lands</div>
+          <div class="dcard-body">It answers "but can it do something I'd actually use?" with a real artefact the audience can see, navigate, and immediately recognise as production-ready educational content.</div>
+        </div>
+      </div>
+      <div class="insight" style="border-left:3px solid var(--purple)">
+        <div class="insight-lbl">Key Insight</div>
+        <div class="insight-body">The constraint on what an educator can produce is no longer technical. It is now entirely the quality of the goal specification.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════════════
+       DEMO 3 · OPENCLAW
+  ═══════════════════════════════════════════════════════════════════════ -->
+  <section class="slide" id="d3">
+    <button class="back-btn" onclick="backToRing()">&#8592; Back to demos</button>
+    <div class="demo-wrapper">
+      <div class="demo-num" style="color:var(--amber)">// Demo 03</div>
+      <h2 class="demo-h">OpenClaw</h2>
+      <p class="demo-sub">The human at the perimeter — always-on, always reachable</p>
+      <div class="demo-cols">
+        <div class="dcard">
+          <div class="dcard-lbl">What you show</div>
+          <div class="dcard-body">From a phone, send one Telegram message to a running OpenClaw instance. It searches, processes, and delivers a finished file to the Desktop — without any further input.</div>
+        </div>
+        <div class="dcard">
+          <div class="dcard-lbl">Why it lands</div>
+          <div class="dcard-body">An open-source agent, running on a laptop, deployed in an afternoon, reachable from any device. It demonstrates the logical endpoint of the agentic direction — and forces the governance question.</div>
+        </div>
+      </div>
+      <div class="insight" style="border-left:3px solid var(--amber)">
+        <div class="insight-lbl">Key Insight</div>
+        <div class="insight-body">The barrier to autonomous AI acting on institutional infrastructure is now very low. That is both an opportunity and a policy question that needs to be on the faculty agenda.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════════════
+       SLIDE 5 · WHAT CHANGES FOR FACULTY
+  ═══════════════════════════════════════════════════════════════════════ -->
+  <section class="slide" id="s5">
+    <div style="width:100%;max-width:760px">
+      <div class="eyebrow">// Implications</div>
+      <h2 class="section-title">What Changes for Faculty</h2>
+      <div class="levels">
+        <div class="lv">
+          <div class="lv-n">01</div>
+          <div>
+            <div class="lv-title">Specify</div>
+            <div class="lv-desc">Define the goal clearly enough that an agent can pursue it without constant correction. This is a design skill that needs to be taught explicitly.</div>
+          </div>
+        </div>
+        <div class="lv">
+          <div class="lv-n">02</div>
+          <div>
+            <div class="lv-title">Supervise</div>
+            <div class="lv-desc">Monitor execution. Identify when the agent is confident and wrong. Intervene with the domain knowledge the agent cannot replicate.</div>
+          </div>
+        </div>
+        <div class="lv">
+          <div class="lv-n">03</div>
+          <div>
+            <div class="lv-title">Review</div>
+            <div class="lv-desc">Evaluate output against standards the agent does not hold. The faculty role becomes quality assurance, not step-by-step execution.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════════════
+       SLIDE 6 · DISCUSSION
+  ═══════════════════════════════════════════════════════════════════════ -->
+  <section class="slide" id="s6">
+    <div class="disc-block">
+      <div class="eyebrow" style="align-self:center">// Discussion</div>
+      <h2 style="font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:700;margin-top:0.5rem">The Question to Take Away</h2>
+      <p class="disc-q">"If an agent can complete an entire course,<br>what is learning for?"</p>
+      <div class="disc-items">
+        <div class="disc-item">How do we redesign assessments around process rather than product?</div>
+        <div class="disc-item">What does academic integrity mean when anyone can run a local agent?</div>
+        <div class="disc-item">What AI literacy should every graduate hold by 2027?</div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- #deck -->
+
+<!-- ── Navigation Bar ──────────────────────────────────────────────────── -->
+<div id="nav">
+  <button id="btn-prev" onclick="prev()">&#8592;</button>
+  <span id="counter">1&thinsp;/&thinsp;6</span>
+  <button id="btn-next" onclick="next()">&#8594;</button>
+</div>
+
+<div id="hint">&#9664;&#9654; navigate &nbsp;&middot;&nbsp; on ring: &#9664;&#9654; rotate &nbsp;&middot;&nbsp; ENTER select &nbsp;&middot;&nbsp; ESC back</div>
+
+<script src="deck.js"></script>
+
+</body>
+</html>
