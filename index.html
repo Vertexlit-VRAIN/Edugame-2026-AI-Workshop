@@ -18,6 +18,7 @@
     <section class="slide active" id="s1">
       <div class="title-block">
         <div class="title-super">AI Workshop &nbsp;·&nbsp; 2026</div>
+        <div class="title-rule"></div>
         <h1 class="big">AI Agents<br>in Education</h1>
         <p class="title-sub">From Prompts to Autonomous Systems</p>
         <div class="live-badge">
@@ -177,7 +178,7 @@
 
         <div class="demo-num" style="color:var(--cyan)">Demo 01</div>
         <h2 class="demo-h">System 2 Prompting</h2>
-        <p class="demo-sub" style="margin-bottom:1.2rem">Same question &mdash; two prompts &mdash; observe what changes
+        <p class="demo-sub" style="margin-bottom:1.2rem">Same question, two prompts: observe what changes
         </p>
 
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;flex:1;min-height:0">
@@ -187,14 +188,17 @@
 
             <div style="display:flex;align-items:center;gap:0.6rem;flex-shrink:0">
               <span
-                style="font-size:0.75rem;font-weight:600;padding:0.2rem 0.6rem;border-radius:4px;background:var(--surface-2);border:1px solid var(--border);color:var(--text-muted)">System 1</span>
+                style="font-size:0.75rem;font-weight:600;padding:0.2rem 0.6rem;border-radius:4px;background:var(--surface-2);border:1px solid var(--border);color:var(--text-muted)">System
+                1</span>
               <span style="font-size:0.88rem;color:var(--text-muted)">Vague prompt</span>
             </div>
 
             <div
               style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:0.9rem 1rem;font-family:var(--mono);font-size:0.82rem;line-height:1.65;color:var(--text-muted);flex-shrink:0">
               Can you give me feedback on this paragraph?<br><br>
-              <span style="color:var(--text);opacity:0.75">"AI has been used in many fields and has become very popular. It can do many things like writing, coding, and analysis. Some people think it is good and some think it is bad. In education, students are using it more and more. This shows that AI is important."</span>
+              <span style="color:var(--text);opacity:0.75">"AI has been used in many fields and has become very popular.
+                It can do many things like writing, coding, and analysis. Some people think it is good and some think it
+                is bad. In education, students are using it more and more. This shows that AI is important."</span>
             </div>
 
             <button id="d1-run-a" class="d1-btn" onclick="d1Run('a')">Submit &#8594;</button>
@@ -211,14 +215,19 @@
 
             <div style="display:flex;align-items:center;gap:0.6rem;flex-shrink:0">
               <span
-                style="font-size:0.75rem;font-weight:600;padding:0.2rem 0.6rem;border-radius:4px;background:var(--cyan-dim);border:1px solid rgba(45,74,122,0.22);color:var(--cyan)">System 2</span>
+                style="font-size:0.75rem;font-weight:600;padding:0.2rem 0.6rem;border-radius:4px;background:var(--cyan-dim);border:1px solid rgba(45,74,122,0.22);color:var(--cyan)">System
+                2</span>
               <span style="font-size:0.88rem;color:var(--text-muted)">Structured prompt</span>
             </div>
 
             <div
               style="background:var(--surface);border:1px solid rgba(45,74,122,0.18);border-radius:8px;padding:0.9rem 1rem;font-family:var(--mono);font-size:0.8rem;line-height:1.65;color:var(--text-muted);flex-shrink:0">
-              <span style="color:var(--cyan);opacity:0.85">You are reviewing an undergraduate essay paragraph.</span> Paragraph:<br><br>
-              <span style="color:var(--text);opacity:0.75">"AI has been used in many fields and has become very popular. It can do many things like writing, coding, and analysis. Some people think it is good and some think it is bad. In education, students are using it more and more. This shows that AI is important."</span><br><br>
+              <span style="color:var(--cyan);opacity:0.85">You are reviewing an undergraduate essay paragraph.</span>
+              Paragraph:<br><br>
+              <span style="color:var(--text);opacity:0.75">"AI has been used in many fields and has become very popular.
+                It can do many things like writing, coding, and analysis. Some people think it is good and some think it
+                is bad. In education, students are using it more and more. This shows that AI is
+                important."</span><br><br>
               1. Identify the main claim, if any<br>
               2. List two specific weaknesses in the argumentation<br>
               3. Suggest a concrete revision that strengthens the argument<br>
@@ -248,7 +257,7 @@
 
         <div class="demo-num" style="color:var(--purple)">Demo 02</div>
         <h2 class="demo-h">Claude Cowork</h2>
-        <p class="demo-sub" style="margin-bottom:1.2rem">The Agent Action Loop &mdash; made visible in real time</p>
+        <p class="demo-sub" style="margin-bottom:1.2rem">The Agent Action Loop</p>
 
         <div style="display:grid;grid-template-columns:1fr 1.15fr;gap:1.4rem;flex:1;min-height:0">
 
@@ -260,8 +269,7 @@
               <span
                 style="font-size:0.7rem;font-weight:700;color:var(--purple);opacity:0.55;padding-top:0.12rem">01</span>
               <div>
-                <div
-                  style="font-size:0.82rem;font-weight:600;color:var(--purple);margin-bottom:0.2rem">
+                <div style="font-size:0.82rem;font-weight:600;color:var(--purple);margin-bottom:0.2rem">
                   Observe</div>
                 <div style="font-size:0.88rem;color:var(--text-muted);line-height:1.5">Read the task, scan available
                   tools and files, build working context</div>
@@ -276,8 +284,7 @@
               <span
                 style="font-size:0.7rem;font-weight:700;color:var(--purple);opacity:0.55;padding-top:0.12rem">02</span>
               <div>
-                <div
-                  style="font-size:0.82rem;font-weight:600;color:var(--purple);margin-bottom:0.2rem">
+                <div style="font-size:0.82rem;font-weight:600;color:var(--purple);margin-bottom:0.2rem">
                   Plan</div>
                 <div style="font-size:0.88rem;color:var(--text-muted);line-height:1.5">Decompose the goal into ordered
                   sub-steps, select the right tools</div>
@@ -292,11 +299,10 @@
               <span
                 style="font-size:0.7rem;font-weight:700;color:var(--purple);opacity:0.55;padding-top:0.12rem">03</span>
               <div>
-                <div
-                  style="font-size:0.82rem;font-weight:600;color:var(--purple);margin-bottom:0.2rem">
+                <div style="font-size:0.82rem;font-weight:600;color:var(--purple);margin-bottom:0.2rem">
                   Execute</div>
-                <div style="font-size:0.88rem;color:var(--text-muted);line-height:1.5">Write files, run code, browse
-                  &mdash; the agent acts with its full toolkit</div>
+                <div style="font-size:0.88rem;color:var(--text-muted);line-height:1.5">Write files, run code, browse.
+                  The agent acts with its full toolkit</div>
               </div>
             </div>
 
@@ -308,11 +314,10 @@
               <span
                 style="font-size:0.7rem;font-weight:700;color:var(--purple);opacity:0.55;padding-top:0.12rem">04</span>
               <div>
-                <div
-                  style="font-size:0.82rem;font-weight:600;color:var(--purple);margin-bottom:0.2rem">
+                <div style="font-size:0.82rem;font-weight:600;color:var(--purple);margin-bottom:0.2rem">
                   Evaluate</div>
                 <div style="font-size:0.88rem;color:var(--text-muted);line-height:1.5">Check output against the original
-                  goal &mdash; finish, or cycle back to step 01</div>
+                  goal. Finish, or cycle back to step 01</div>
               </div>
             </div>
 
@@ -323,8 +328,7 @@
 
             <div
               style="background:var(--surface);border:1px solid rgba(42,92,63,0.22);border-radius:8px;padding:1rem 1.1rem;flex:1;display:flex;flex-direction:column;min-height:0">
-              <div
-                style="font-size:0.82rem;font-weight:600;color:var(--purple);margin-bottom:0.65rem;flex-shrink:0">
+              <div style="font-size:0.82rem;font-weight:600;color:var(--purple);margin-bottom:0.65rem;flex-shrink:0">
                 Live task</div>
               <div
                 style="font-family:var(--mono);font-size:0.82rem;line-height:1.7;color:var(--text-muted);overflow-y:auto;flex:1">
@@ -341,11 +345,10 @@
 
             <div
               style="background:var(--purple-dim);border:1px solid rgba(42,92,63,0.15);border-radius:8px;padding:0.85rem 1rem;flex-shrink:0">
-              <div
-                style="font-size:0.75rem;font-weight:600;color:var(--purple);opacity:0.65;margin-bottom:0.3rem">
+              <div style="font-size:0.75rem;font-weight:600;color:var(--purple);opacity:0.65;margin-bottom:0.3rem">
                 Note</div>
               <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.52">This presentation was produced by
-                the same loop &mdash; one Cowork session, no code written by hand.</div>
+                the same loop. One Cowork session, no code written by hand.</div>
             </div>
 
           </div>
@@ -374,8 +377,7 @@
             <!-- Goal -->
             <div
               style="background:var(--amber-dim);border:1px solid rgba(200,75,49,0.30);border-radius:8px;padding:0.6rem 1rem;text-align:center">
-              <div
-                style="font-size:0.72rem;font-weight:600;color:var(--amber);margin-bottom:0.15rem">
+              <div style="font-size:0.72rem;font-weight:600;color:var(--amber);margin-bottom:0.15rem">
                 Goal</div>
               <div style="font-size:0.85rem;color:var(--text-muted)">"Prepare a policy briefing on student AI use"</div>
             </div>
@@ -386,8 +388,7 @@
             <!-- Coordinator -->
             <div
               style="background:var(--surface);border:1px solid rgba(200,75,49,0.40);border-radius:8px;padding:0.65rem 1rem;text-align:center">
-              <div
-                style="font-size:0.72rem;font-weight:600;color:var(--amber);margin-bottom:0.15rem">
+              <div style="font-size:0.72rem;font-weight:600;color:var(--amber);margin-bottom:0.15rem">
                 Coordinator Agent</div>
               <div style="font-size:0.82rem;color:var(--text-muted)">Receives goal &nbsp;&middot;&nbsp; decomposes
                 &nbsp;&middot;&nbsp; delegates &nbsp;&middot;&nbsp; reassembles</div>
@@ -404,24 +405,21 @@
 
               <div
                 style="background:var(--surface);border:1px solid rgba(200,75,49,0.18);border-radius:6px;padding:0.55rem 0.6rem;text-align:center">
-                <div
-                  style="font-size:0.68rem;font-weight:600;color:var(--amber);opacity:0.75;margin-bottom:0.15rem">
+                <div style="font-size:0.68rem;font-weight:600;color:var(--amber);opacity:0.75;margin-bottom:0.15rem">
                   Search</div>
                 <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.4">Retrieves relevant sources</div>
               </div>
 
               <div
                 style="background:var(--surface);border:1px solid rgba(200,75,49,0.18);border-radius:6px;padding:0.55rem 0.6rem;text-align:center">
-                <div
-                  style="font-size:0.68rem;font-weight:600;color:var(--amber);opacity:0.75;margin-bottom:0.15rem">
+                <div style="font-size:0.68rem;font-weight:600;color:var(--amber);opacity:0.75;margin-bottom:0.15rem">
                   Analyse</div>
                 <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.4">Extracts key findings</div>
               </div>
 
               <div
                 style="background:var(--surface);border:1px solid rgba(200,75,49,0.18);border-radius:6px;padding:0.55rem 0.6rem;text-align:center">
-                <div
-                  style="font-size:0.68rem;font-weight:600;color:var(--amber);opacity:0.75;margin-bottom:0.15rem">
+                <div style="font-size:0.68rem;font-weight:600;color:var(--amber);opacity:0.75;margin-bottom:0.15rem">
                   Write</div>
                 <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.4">Drafts the document</div>
               </div>
@@ -437,8 +435,7 @@
             <!-- Output -->
             <div
               style="background:var(--amber-dim);border:1px solid rgba(200,75,49,0.30);border-radius:8px;padding:0.6rem 1rem;text-align:center">
-              <div
-                style="font-size:0.72rem;font-weight:600;color:var(--amber);margin-bottom:0.15rem">
+              <div style="font-size:0.72rem;font-weight:600;color:var(--amber);margin-bottom:0.15rem">
                 Output</div>
               <div style="font-size:0.85rem;color:var(--text-muted)">Finished .docx file &nbsp;&middot;&nbsp; zero human
                 steps between goal and result</div>
@@ -449,25 +446,25 @@
           <!-- ── Right: closing provocations ──────────────────────────────── -->
           <div style="display:flex;flex-direction:column;gap:0.85rem;justify-content:center">
 
-            <div
-              style="font-size:0.88rem;font-weight:600;color:var(--amber);opacity:0.85;margin-bottom:0.55rem">
+            <div style="font-size:0.88rem;font-weight:600;color:var(--amber);opacity:0.85;margin-bottom:0.55rem">
               For discussion</div>
 
             <div
               style="border-left:2px solid rgba(200,75,49,0.35);padding:0.75rem 1rem;background:var(--surface);border-radius:0 8px 8px 0">
-              <div style="font-size:0.95rem;color:var(--text);line-height:1.58">If delegation makes completing an assignment trivial &mdash; what does submitting it actually mean?</div>
+              <div style="font-size:0.95rem;color:var(--text);line-height:1.58">If delegation makes completing an
+                assignment trivial, what does submitting it actually mean?</div>
             </div>
 
             <div
               style="border-left:2px solid rgba(200,75,49,0.35);padding:0.75rem 1rem;background:var(--surface);border-radius:0 8px 8px 0">
               <div style="font-size:0.95rem;color:var(--text);line-height:1.58">When agents act autonomously across
-                institutional systems &mdash; who is accountable, and to whom?</div>
+                institutional systems, who is accountable, and to whom?</div>
             </div>
 
             <div
               style="border-left:2px solid rgba(200,75,49,0.35);padding:0.75rem 1rem;background:var(--surface);border-radius:0 8px 8px 0">
               <div style="font-size:0.95rem;color:var(--text);line-height:1.58">What should every graduate understand
-                about delegation &mdash; as a capability they hold and a risk they carry?</div>
+                about delegation, as a capability they hold and a risk they carry?</div>
             </div>
           </div>
 
@@ -506,9 +503,11 @@
         </div>
 
         <div class="disc-block" style="text-align:left;align-items:flex-start;max-width:100%">
-          <p style="font-family:var(--serif);font-style:italic;font-size:clamp(1.2rem,2.2vw,1.55rem);font-weight:400;color:var(--text);line-height:1.5;margin-bottom:1.2rem">"If an agent can complete an entire course &mdash; what is learning for?"</p>
+          <p
+            style="font-family:var(--serif);font-style:italic;font-size:clamp(1.2rem,2.2vw,1.55rem);font-weight:400;color:var(--text);line-height:1.5;margin-bottom:1.2rem">
+            "If an agent can complete an entire course, what is learning for?"</p>
           <div class="disc-items" style="max-width:100%">
-            <div class="disc-item">If you can delegate the work &mdash; what are you actually here to learn?</div>
+            <div class="disc-item">If you can delegate the work, what are you actually here to learn?</div>
             <div class="disc-item">What does academic integrity mean when anyone can run a local agent?</div>
             <div class="disc-item">What AI literacy should every graduate hold by 2027?</div>
           </div>

@@ -191,7 +191,15 @@ body::after {
   text-transform: uppercase;
   color: var(--cyan);
   opacity: 0.65;
-  margin-bottom: 1.8rem;
+  margin-bottom: 0.9rem;
+}
+
+.title-rule {
+  width: 2.8rem;
+  height: 1px;
+  background: var(--cyan);
+  opacity: 0.3;
+  margin: 0 auto 1.5rem;
 }
 
 h1.big {
@@ -715,6 +723,7 @@ h1.big {
 }
 
 #rinfo-name {
+  font-family: var(--serif);
   font-size: 1.45rem;
   font-weight: 600;
   margin-bottom: 0.3rem;
