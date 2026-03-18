@@ -52,6 +52,18 @@ body::before {
     radial-gradient(ellipse 50% 40% at 85% 80%, rgba(200, 75, 49, 0.04) 0%, transparent 70%);
 }
 
+/* ─── Paper Grain Texture ─────────────────────────────────────────────  */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.055;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 300px 300px;
+}
+
 /* ─── Slide Container ────────────────────────────────────────────────  */
 #deck {
   position: relative;
@@ -196,10 +208,12 @@ h1.big {
 }
 
 .title-sub {
+  font-family: var(--serif);
+  font-style: italic;
   font-size: clamp(1rem, 1.8vw, 1.25rem);
   color: var(--text-muted);
-  font-weight: 300;
-  letter-spacing: 0.02em;
+  font-weight: 400;
+  letter-spacing: 0.01em;
   margin-bottom: 3rem;
 }
 
@@ -801,7 +815,9 @@ h1.big {
 }
 
 .demo-sub {
-  font-size: 1.15rem;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.12rem;
   color: var(--text-muted);
   margin-bottom: 2rem;
 }
@@ -930,24 +946,24 @@ h1.big {
 .disc-items {
   display: flex;
   flex-direction: column;
-  gap: 0.7rem;
+  gap: 0;
   text-align: left;
   width: 100%;
   max-width: 720px;
 }
 
 .disc-item {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 0.95rem 1.2rem;
-  font-size: 1.1rem;
+  padding: 0.65rem 0 0.65rem 1.2rem;
+  font-size: 1.08rem;
   color: var(--text-muted);
-  line-height: 1.55;
+  line-height: 1.65;
+  border-left: 2px solid rgba(45, 74, 122, 0.2);
+}
+
+.disc-item + .disc-item {
+  margin-top: 0.1rem;
 }
 
 .disc-item::before {
-  content: '·  ';
-  color: var(--cyan);
-  opacity: 0.55;
+  content: none;
 }
