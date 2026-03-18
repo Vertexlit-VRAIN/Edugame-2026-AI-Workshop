@@ -153,7 +153,7 @@
             <div class="ritem back" data-demo="3">
               <div class="ritem-num">03</div>
               <div class="ritem-icon">&#9881;</div>
-              <div class="ritem-label">Open<br>Claw</div>
+              <div class="ritem-label">Delegation<br>Architecture</div>
               <div class="ritem-enter">[ Enter ]</div>
             </div>
 
@@ -173,31 +173,71 @@
   ═══════════════════════════════════════════════════════════════════════ -->
     <section class="slide" id="d1">
       <button class="back-btn" onclick="backToRing()">&#8592; Back to demos</button>
-      <div class="demo-wrapper">
+      <div style="width:100%;max-width:1060px;height:82vh;display:flex;flex-direction:column;padding-top:4rem">
+
         <div class="demo-num" style="color:var(--cyan)">// Demo 01</div>
         <h2 class="demo-h">System 2 Prompting</h2>
-        <p class="demo-sub">Activating deliberative reasoning — specificity determines whether the model thinks or just
-          reacts</p>
-        <div class="demo-cols">
-          <div class="dcard">
-            <div class="dcard-lbl">What you show</div>
-            <div class="dcard-body">Two prompts, same question. The vague version triggers a reflexive, automatic
-              response — System 1. The structured version, with explicit role, context, and chain-of-thought
-              instruction, forces the model to pause, generate reasoning paths, and evaluate before answering — System
-              2.</div>
+        <p class="demo-sub" style="margin-bottom:1.2rem">Same question &mdash; two prompts &mdash; observe what changes
+        </p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;flex:1;min-height:0">
+
+          <!-- ── Panel A · System 1 ──────────────────────────────────── -->
+          <div style="display:flex;flex-direction:column;gap:0.65rem;min-height:0">
+
+            <div style="display:flex;align-items:center;gap:0.6rem;flex-shrink:0">
+              <span
+                style="font-family:var(--mono);font-size:0.7rem;letter-spacing:0.16em;padding:0.18rem 0.5rem;border-radius:4px;background:var(--surface-2);border:1px solid var(--border);color:var(--text-muted)">SYSTEM
+                1</span>
+              <span style="font-size:0.88rem;color:var(--text-muted)">Vague prompt</span>
+            </div>
+
+            <div
+              style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:0.9rem 1rem;font-family:var(--mono);font-size:0.82rem;line-height:1.65;color:var(--text-muted);flex-shrink:0">
+              Is this a good exam question?<br><br>
+              <span style="color:var(--text);opacity:0.75">"Explain the causes of World War 1."</span>
+            </div>
+
+            <button id="d1-run-a" class="d1-btn" onclick="d1Run('a')">Send &#8594;</button>
+
+            <div id="d1-resp-a"
+              style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1rem;font-size:0.93rem;line-height:1.68;color:var(--text-muted);flex:1;overflow-y:auto;min-height:0">
+              <span style="opacity:0.32;font-style:italic">Response will appear here&hellip;</span>
+            </div>
+
           </div>
-          <div class="dcard">
-            <div class="dcard-lbl">Why it lands</div>
-            <div class="dcard-body">The output difference is visible in seconds. Faculty recognise it immediately as
-              analogous to the difference between an ambiguous assignment brief and a well-scoped one. The audience just
-              learned that AI can reach System 2 — this shows the switch that turns it on.</div>
+
+          <!-- ── Panel B · System 2 ──────────────────────────────────── -->
+          <div style="display:flex;flex-direction:column;gap:0.65rem;min-height:0">
+
+            <div style="display:flex;align-items:center;gap:0.6rem;flex-shrink:0">
+              <span
+                style="font-family:var(--mono);font-size:0.7rem;letter-spacing:0.16em;padding:0.18rem 0.5rem;border-radius:4px;background:var(--cyan-dim);border:1px solid rgba(0,153,187,0.28);color:var(--cyan)">SYSTEM
+                2</span>
+              <span style="font-size:0.88rem;color:var(--text-muted)">Structured prompt</span>
+            </div>
+
+            <div
+              style="background:var(--surface);border:1px solid rgba(0,153,187,0.2);border-radius:8px;padding:0.9rem 1rem;font-family:var(--mono);font-size:0.8rem;line-height:1.65;color:var(--text-muted);flex-shrink:0">
+              <span style="color:var(--cyan);opacity:0.85">You are an expert in higher-education pedagogy and Bloom's
+                Taxonomy.</span> A colleague has submitted this exam question for peer review:<br><br>
+              <span style="color:var(--text);opacity:0.75">"Explain the causes of World War 1."</span><br><br>
+              1. Identify which Bloom's Taxonomy level it targets<br>
+              2. List two specific design weaknesses<br>
+              3. Write an improved version targeting a higher cognitive level<br>
+              4. Rate its higher-order alignment (1&ndash;5) and justify your score<br><br>
+              <span style="color:var(--cyan);opacity:0.6">Think step by step before concluding.</span>
+            </div>
+
+            <button id="d1-run-b" class="d1-btn d1-btn-cyan" onclick="d1Run('b')">Send &#8594;</button>
+
+            <div id="d1-resp-b"
+              style="background:var(--surface);border:1px solid rgba(0,153,187,0.2);border-radius:8px;padding:1rem;font-size:0.93rem;line-height:1.68;color:var(--text);flex:1;overflow-y:auto;min-height:0">
+              <span style="opacity:0.32;font-style:italic">Response will appear here&hellip;</span>
+            </div>
+
           </div>
-        </div>
-        <div class="insight" style="border-left:3px solid var(--cyan)">
-          <div class="insight-lbl">Key Insight</div>
-          <div class="insight-body">AI no longer defaults to its first automatic prediction — but only if you give it a
-            reason not to. That reason is the prompt. Prompt design is a teachable pedagogical skill, not a technical
-            one.</div>
+
         </div>
       </div>
     </section>
@@ -207,63 +247,234 @@
   ═══════════════════════════════════════════════════════════════════════ -->
     <section class="slide" id="d2">
       <button class="back-btn" onclick="backToRing()">&#8592; Back to demos</button>
-      <div class="demo-wrapper">
+      <div style="width:100%;max-width:1060px;height:82vh;display:flex;flex-direction:column;padding-top:4rem">
+
         <div class="demo-num" style="color:var(--purple)">// Demo 02</div>
         <h2 class="demo-h">Claude Cowork</h2>
-        <p class="demo-sub">The Agent Action Loop made visible — observe, generate sub-programs, execute, evaluate</p>
-        <div class="demo-cols">
-          <div class="dcard">
-            <div class="dcard-lbl">What you show</div>
-            <div class="dcard-body">The BIP AI Workshop — a complete, offline interactive educational tool built in a
-              single Cowork session. The agent observed the task, generated intermediate file structures, executed
-              across the filesystem using its full toolkit, and evaluated its own output. No code written by hand. This
-              presentation is also a product of that same loop.</div>
+        <p class="demo-sub" style="margin-bottom:1.2rem">The Agent Action Loop &mdash; made visible in real time</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1.15fr;gap:1.4rem;flex:1;min-height:0">
+
+          <!-- ── Left: Action Loop stages ─────────────────────────────── -->
+          <div style="display:flex;flex-direction:column;justify-content:center;gap:0">
+
+            <div
+              style="display:grid;grid-template-columns:2rem 1fr;gap:0.8rem;align-items:start;background:var(--surface);border:1px solid rgba(108,92,231,0.15);border-radius:8px;padding:0.8rem 1rem">
+              <span
+                style="font-family:var(--mono);font-size:0.68rem;font-weight:700;color:var(--purple);opacity:0.65;padding-top:0.12rem">01</span>
+              <div>
+                <div
+                  style="font-family:var(--mono);font-size:0.72rem;letter-spacing:0.16em;color:var(--purple);margin-bottom:0.2rem">
+                  OBSERVE</div>
+                <div style="font-size:0.88rem;color:var(--text-muted);line-height:1.5">Read the task, scan available
+                  tools and files, build working context</div>
+              </div>
+            </div>
+
+            <div style="text-align:center;color:var(--border-bright);padding:0.18rem 0;font-size:0.85rem;line-height:1">
+              &#8595;</div>
+
+            <div
+              style="display:grid;grid-template-columns:2rem 1fr;gap:0.8rem;align-items:start;background:var(--surface);border:1px solid rgba(108,92,231,0.15);border-radius:8px;padding:0.8rem 1rem">
+              <span
+                style="font-family:var(--mono);font-size:0.68rem;font-weight:700;color:var(--purple);opacity:0.65;padding-top:0.12rem">02</span>
+              <div>
+                <div
+                  style="font-family:var(--mono);font-size:0.72rem;letter-spacing:0.16em;color:var(--purple);margin-bottom:0.2rem">
+                  PLAN</div>
+                <div style="font-size:0.88rem;color:var(--text-muted);line-height:1.5">Decompose the goal into ordered
+                  sub-steps, select the right tools</div>
+              </div>
+            </div>
+
+            <div style="text-align:center;color:var(--border-bright);padding:0.18rem 0;font-size:0.85rem;line-height:1">
+              &#8595;</div>
+
+            <div
+              style="display:grid;grid-template-columns:2rem 1fr;gap:0.8rem;align-items:start;background:var(--surface);border:1px solid rgba(108,92,231,0.15);border-radius:8px;padding:0.8rem 1rem">
+              <span
+                style="font-family:var(--mono);font-size:0.68rem;font-weight:700;color:var(--purple);opacity:0.65;padding-top:0.12rem">03</span>
+              <div>
+                <div
+                  style="font-family:var(--mono);font-size:0.72rem;letter-spacing:0.16em;color:var(--purple);margin-bottom:0.2rem">
+                  EXECUTE</div>
+                <div style="font-size:0.88rem;color:var(--text-muted);line-height:1.5">Write files, run code, browse
+                  &mdash; the agent acts with its full toolkit</div>
+              </div>
+            </div>
+
+            <div style="text-align:center;color:var(--border-bright);padding:0.18rem 0;font-size:0.85rem;line-height:1">
+              &#8595;</div>
+
+            <div
+              style="display:grid;grid-template-columns:2rem 1fr;gap:0.8rem;align-items:start;background:var(--surface);border:1px solid rgba(108,92,231,0.15);border-radius:8px;padding:0.8rem 1rem">
+              <span
+                style="font-family:var(--mono);font-size:0.68rem;font-weight:700;color:var(--purple);opacity:0.65;padding-top:0.12rem">04</span>
+              <div>
+                <div
+                  style="font-family:var(--mono);font-size:0.72rem;letter-spacing:0.16em;color:var(--purple);margin-bottom:0.2rem">
+                  EVALUATE</div>
+                <div style="font-size:0.88rem;color:var(--text-muted);line-height:1.5">Check output against the original
+                  goal &mdash; finish, or cycle back to step 01</div>
+              </div>
+            </div>
+
           </div>
-          <div class="dcard">
-            <div class="dcard-lbl">Why it lands</div>
-            <div class="dcard-body">The audience sees a real artefact produced by an agent cycling through the exact
-              loop described in the theory. The agent toolkit — file access, code execution, web browser — was used
-              autonomously to produce something any educator could deploy tomorrow. It answers "but can it do something
-              I would actually use?"</div>
+
+          <!-- ── Right: live task + meta ────────────────────────────────── -->
+          <div style="display:flex;flex-direction:column;gap:0.9rem;min-height:0">
+
+            <div
+              style="background:var(--surface);border:1px solid rgba(108,92,231,0.28);border-radius:8px;padding:1rem 1.1rem;flex:1;display:flex;flex-direction:column;min-height:0">
+              <div
+                style="font-family:var(--mono);font-size:0.7rem;letter-spacing:0.16em;color:var(--purple);margin-bottom:0.65rem;flex-shrink:0">
+                LIVE TASK</div>
+              <div
+                style="font-family:var(--mono);font-size:0.82rem;line-height:1.7;color:var(--text-muted);overflow-y:auto;flex:1">
+                <span style="color:var(--purple);opacity:0.85">You are helping faculty prepare for a workshop on AI in
+                  education.</span><br><br>
+                Create a one-page briefing document for undergraduate students covering:<br><br>
+                1. What AI agents can and cannot do in academic contexts<br>
+                2. Three concrete guidelines for ethical AI use in submitted work<br>
+                3. What academic integrity means in the age of autonomous agents<br><br>
+                <span style="color:var(--purple);opacity:0.6">Format with clear sections and practical examples. Save as
+                  a .docx file.</span>
+              </div>
+            </div>
+
+            <div
+              style="background:var(--purple-dim);border:1px solid rgba(108,92,231,0.18);border-radius:8px;padding:0.85rem 1rem;flex-shrink:0">
+              <div
+                style="font-family:var(--mono);font-size:0.68rem;letter-spacing:0.16em;color:var(--purple);opacity:0.65;margin-bottom:0.3rem">
+                META</div>
+              <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.52">This presentation was produced by
+                the same loop &mdash; one Cowork session, no code written by hand.</div>
+            </div>
+
           </div>
-        </div>
-        <div class="insight" style="border-left:3px solid var(--purple)">
-          <div class="insight-lbl">Key Insight</div>
-          <div class="insight-body">The agent holds the toolkit. The faculty holds the goal. The constraint on what an
-            educator can produce is no longer technical — it is entirely the quality of the goal specification.</div>
+
         </div>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════════════════════════════════════
-       DEMO 3 · OPENCLAW
+       DEMO 3 · DELEGATION ARCHITECTURE
   ═══════════════════════════════════════════════════════════════════════ -->
     <section class="slide" id="d3">
       <button class="back-btn" onclick="backToRing()">&#8592; Back to demos</button>
-      <div class="demo-wrapper">
+      <div style="width:100%;max-width:1060px;height:82vh;display:flex;flex-direction:column;padding-top:4rem">
+
         <div class="demo-num" style="color:var(--amber)">// Demo 03</div>
-        <h2 class="demo-h">OpenClaw</h2>
-        <p class="demo-sub">The Delegation Architecture in practice — one instruction, distributed execution, no human
-          bottleneck</p>
-        <div class="demo-cols">
-          <div class="dcard">
-            <div class="dcard-lbl">What you show</div>
-            <div class="dcard-body">From a phone, one Telegram message reaches a local OpenClaw instance. The Main Agent
-              receives the goal, decomposes it into sub-activities — search, process, synthesize — coordinates their
-              execution, and delivers a finished file to the Desktop. No further human input at any stage.</div>
+        <h2 class="demo-h">Delegation Architecture</h2>
+        <p class="demo-sub" style="margin-bottom:1.2rem">One instruction &mdash; parallel execution &mdash; no human in
+          the loop</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;flex:1;min-height:0;align-items:center">
+
+          <!-- ── Left: architecture diagram ─────────────────────────────── -->
+          <div style="display:flex;flex-direction:column;gap:0;align-items:stretch">
+
+            <!-- Goal -->
+            <div
+              style="background:var(--amber-dim);border:1px solid rgba(196,122,10,0.35);border-radius:8px;padding:0.6rem 1rem;text-align:center">
+              <div
+                style="font-family:var(--mono);font-size:0.68rem;letter-spacing:0.16em;color:var(--amber);margin-bottom:0.15rem">
+                GOAL</div>
+              <div style="font-size:0.85rem;color:var(--text-muted)">"Prepare a policy briefing on student AI use"</div>
+            </div>
+
+            <div style="text-align:center;color:var(--border-bright);padding:0.15rem 0;font-size:0.85rem;line-height:1">
+              &#8595;</div>
+
+            <!-- Coordinator -->
+            <div
+              style="background:var(--surface);border:1px solid rgba(196,122,10,0.45);border-radius:8px;padding:0.65rem 1rem;text-align:center">
+              <div
+                style="font-family:var(--mono);font-size:0.68rem;letter-spacing:0.16em;color:var(--amber);margin-bottom:0.15rem">
+                COORDINATOR AGENT</div>
+              <div style="font-size:0.82rem;color:var(--text-muted)">Receives goal &nbsp;&middot;&nbsp; decomposes
+                &nbsp;&middot;&nbsp; delegates &nbsp;&middot;&nbsp; reassembles</div>
+            </div>
+
+            <!-- Split arrows -->
+            <div
+              style="display:grid;grid-template-columns:1fr 1fr 1fr;text-align:center;color:var(--border-bright);font-size:0.9rem;padding:0.1rem 1.5rem;line-height:1.2">
+              <span>&#8601;</span><span>&#8595;</span><span>&#8600;</span>
+            </div>
+
+            <!-- Three parallel agents -->
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem">
+
+              <div
+                style="background:var(--surface);border:1px solid rgba(196,122,10,0.2);border-radius:6px;padding:0.55rem 0.6rem;text-align:center">
+                <div
+                  style="font-family:var(--mono);font-size:0.62rem;letter-spacing:0.14em;color:var(--amber);opacity:0.75;margin-bottom:0.15rem">
+                  SEARCH</div>
+                <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.4">Retrieves relevant sources</div>
+              </div>
+
+              <div
+                style="background:var(--surface);border:1px solid rgba(196,122,10,0.2);border-radius:6px;padding:0.55rem 0.6rem;text-align:center">
+                <div
+                  style="font-family:var(--mono);font-size:0.62rem;letter-spacing:0.14em;color:var(--amber);opacity:0.75;margin-bottom:0.15rem">
+                  ANALYSE</div>
+                <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.4">Extracts key findings</div>
+              </div>
+
+              <div
+                style="background:var(--surface);border:1px solid rgba(196,122,10,0.2);border-radius:6px;padding:0.55rem 0.6rem;text-align:center">
+                <div
+                  style="font-family:var(--mono);font-size:0.62rem;letter-spacing:0.14em;color:var(--amber);opacity:0.75;margin-bottom:0.15rem">
+                  WRITE</div>
+                <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.4">Drafts the document</div>
+              </div>
+
+            </div>
+
+            <!-- Merge arrows -->
+            <div
+              style="display:grid;grid-template-columns:1fr 1fr 1fr;text-align:center;color:var(--border-bright);font-size:0.9rem;padding:0.1rem 1.5rem;line-height:1.2">
+              <span>&#8600;</span><span>&#8595;</span><span>&#8601;</span>
+            </div>
+
+            <!-- Output -->
+            <div
+              style="background:var(--amber-dim);border:1px solid rgba(196,122,10,0.35);border-radius:8px;padding:0.6rem 1rem;text-align:center">
+              <div
+                style="font-family:var(--mono);font-size:0.68rem;letter-spacing:0.16em;color:var(--amber);margin-bottom:0.15rem">
+                OUTPUT</div>
+              <div style="font-size:0.85rem;color:var(--text-muted)">Finished .docx file &nbsp;&middot;&nbsp; zero human
+                steps between goal and result</div>
+            </div>
+
           </div>
-          <div class="dcard">
-            <div class="dcard-lbl">Why it lands</div>
-            <div class="dcard-body">This is the Fractal Intelligence Framework running on a laptop, deployed in an
-              afternoon. The theory described parallel specialized agents operating without a human bottleneck — this is
-              what that looks like as a working system, open-source, locally controlled, and institutionally deployable
-              by any faculty member.</div>
+
+          <!-- ── Right: closing provocations ──────────────────────────────── -->
+          <div style="display:flex;flex-direction:column;gap:0.85rem;justify-content:center">
+
+            <div
+              style="font-family:var(--mono);font-size:0.68rem;letter-spacing:0.16em;color:var(--amber);opacity:0.7;margin-bottom:0.1rem">
+              OPEN QUESTIONS</div>
+
+            <div
+              style="border-left:2px solid rgba(196,122,10,0.4);padding:0.75rem 1rem;background:var(--surface);border-radius:0 8px 8px 0">
+              <div style="font-size:0.95rem;color:var(--text);line-height:1.58">If a student submits work produced by a
+                delegation system &mdash; what exactly failed, and where?</div>
+            </div>
+
+            <div
+              style="border-left:2px solid rgba(196,122,10,0.4);padding:0.75rem 1rem;background:var(--surface);border-radius:0 8px 8px 0">
+              <div style="font-size:0.95rem;color:var(--text);line-height:1.58">When agents act autonomously across
+                institutional systems &mdash; who is accountable, and to whom?</div>
+            </div>
+
+            <div
+              style="border-left:2px solid rgba(196,122,10,0.4);padding:0.75rem 1rem;background:var(--surface);border-radius:0 8px 8px 0">
+              <div style="font-size:0.95rem;color:var(--text);line-height:1.58">What should every graduate understand
+                about delegation &mdash; as a capability they hold and a risk they carry?</div>
+            </div>
           </div>
-        </div>
-        <div class="insight" style="border-left:3px solid var(--amber)">
-          <div class="insight-lbl">Key Insight</div>
-          <div class="insight-body">The barrier to a Delegation Architecture on institutional infrastructure is now very
-            low. That is both the opportunity and the governance question that cannot stay theoretical.</div>
+
         </div>
       </div>
     </section>

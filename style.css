@@ -705,6 +705,46 @@ h1.big {
 }
 
 /* ─────────────────────────────────────────────────────────────────────
+   DEMO 1 · INTERACTIVE BUTTONS
+──────────────────────────────────────────────────────────────────────── */
+.d1-btn {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 1px solid var(--border-bright);
+  background: var(--surface-2);
+  color: var(--text-muted);
+  border-radius: 6px;
+  padding: 0.42rem 0.9rem;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  align-self: flex-start;
+  flex-shrink: 0;
+}
+
+.d1-btn:hover:not(:disabled) {
+  color: var(--text);
+  border-color: var(--text-muted);
+}
+
+.d1-btn.d1-btn-cyan {
+  border-color: rgba(0, 153, 187, 0.4);
+  color: var(--cyan);
+  background: var(--cyan-dim);
+}
+
+.d1-btn.d1-btn-cyan:hover:not(:disabled) {
+  border-color: var(--cyan);
+  background: rgba(0, 153, 187, 0.18);
+}
+
+.d1-btn:disabled {
+  opacity: 0.38;
+  cursor: default;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
    DEMO DETAIL SLIDES
 ──────────────────────────────────────────────────────────────────────── */
 .back-btn {
