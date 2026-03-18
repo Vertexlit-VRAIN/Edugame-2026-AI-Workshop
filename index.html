@@ -286,8 +286,8 @@
               <div>
                 <div style="font-size:0.82rem;font-weight:600;color:var(--purple);margin-bottom:0.2rem">
                   Plan</div>
-                <div style="font-size:0.88rem;color:var(--text-muted);line-height:1.5">Decompose the goal into ordered
-                  sub-steps, select the right tools</div>
+                <div style="font-size:0.88rem;color:var(--text-muted);line-height:1.5">Decompose the goal into steps,
+                  visible as a checklist in the Progress panel</div>
               </div>
             </div>
 
@@ -302,7 +302,7 @@
                 <div style="font-size:0.82rem;font-weight:600;color:var(--purple);margin-bottom:0.2rem">
                   Execute</div>
                 <div style="font-size:0.88rem;color:var(--text-muted);line-height:1.5">Write files, run code, browse.
-                  The agent acts with its full toolkit</div>
+                  Watch the Workspace folder fill in real time</div>
               </div>
             </div>
 
@@ -323,30 +323,76 @@
 
           </div>
 
-          <!-- ── Right: live task + meta ────────────────────────────────── -->
-          <div style="display:flex;flex-direction:column;gap:0.9rem;min-height:0">
+          <!-- ── Right: Cowork UI schematic ───────────────────────────── -->
+          <div style="display:flex;flex-direction:column;gap:0.8rem;min-height:0">
 
+            <!-- Cowork interface mockup -->
             <div
-              style="background:var(--surface);border:1px solid rgba(42,92,63,0.22);border-radius:8px;padding:1rem 1.1rem;flex:1;display:flex;flex-direction:column;min-height:0">
-              <div style="font-size:0.82rem;font-weight:600;color:var(--purple);margin-bottom:0.65rem;flex-shrink:0">
-                Live task</div>
+              style="background:var(--surface);border:1px solid rgba(42,92,63,0.25);border-radius:10px;flex:1;display:flex;flex-direction:column;overflow:hidden;min-height:0">
+
+              <!-- Title bar -->
               <div
-                style="font-family:var(--mono);font-size:0.82rem;line-height:1.7;color:var(--text-muted);overflow-y:auto;flex:1">
-                <span style="color:var(--purple);opacity:0.85">You are helping faculty prepare for a workshop on AI in
-                  education.</span><br><br>
-                Create a one-page briefing document for undergraduate students covering:<br><br>
-                1. What AI agents can and cannot do in academic contexts<br>
-                2. Three concrete guidelines for ethical AI use in submitted work<br>
-                3. What academic integrity means in the age of autonomous agents<br><br>
-                <span style="color:var(--purple);opacity:0.6">Format with clear sections and practical examples. Save as
-                  a .docx file.</span>
+                style="background:rgba(42,92,63,0.07);border-bottom:1px solid rgba(42,92,63,0.13);padding:0.42rem 0.9rem;display:flex;align-items:center;gap:0.55rem;flex-shrink:0">
+                <span style="font-size:0.72rem;font-weight:600;color:var(--purple)">Cowork</span>
+                <span
+                  style="width:6px;height:6px;border-radius:50%;background:var(--purple);opacity:0.5;display:inline-block;animation:throb 2.2s ease-in-out infinite"></span>
+                <span style="font-size:0.68rem;color:var(--text-muted);opacity:0.55">live session</span>
               </div>
+
+              <!-- Chat / task input -->
+              <div
+                style="padding:0.6rem 0.9rem;border-bottom:1px solid var(--border);flex:1;overflow-y:auto;min-height:0">
+                <div style="font-size:0.68rem;font-weight:600;color:var(--purple);opacity:0.65;margin-bottom:0.25rem">
+                  Chat — your instruction</div>
+                <div style="font-family:var(--mono);font-size:0.72rem;color:var(--text-muted);line-height:1.6">
+                  <span style="color:var(--purple);opacity:0.85">You are helping faculty prepare for a workshop on AI in
+                    education.</span><br><br>
+                  Create a one-page briefing document for undergraduate students covering:<br><br>
+                  1. What AI agents can and cannot do in academic contexts<br>
+                  2. Three concrete guidelines for ethical AI use in submitted work<br>
+                  3. What academic integrity means in the age of autonomous agents<br><br>
+                  <span style="color:var(--purple);opacity:0.6">Format with clear sections and practical examples. Save
+                    as a .docx file.</span>
+                </div>
+              </div>
+
+              <!-- Progress panel -->
+              <div style="padding:0.6rem 0.9rem;border-bottom:1px solid var(--border);flex-shrink:0">
+                <div style="font-size:0.68rem;font-weight:600;color:var(--purple);opacity:0.65;margin-bottom:0.3rem">
+                  Progress — agent plan</div>
+                <div style="display:flex;flex-direction:column;gap:0.22rem">
+                  <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.74rem;color:var(--text-muted)">
+                    <span style="color:var(--purple)">✓</span> Read task and workspace files
+                  </div>
+                  <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.74rem;color:var(--text-muted)">
+                    <span style="color:var(--purple)">✓</span> Plan document structure
+                  </div>
+                  <div
+                    style="display:flex;align-items:center;gap:0.4rem;font-size:0.74rem;color:var(--purple);font-weight:500">
+                    <span>◌</span> Write and format the briefing
+                  </div>
+                  <div
+                    style="display:flex;align-items:center;gap:0.4rem;font-size:0.74rem;color:var(--text-muted);opacity:0.38">
+                    <span>◌</span> Save as student_briefing.docx
+                  </div>
+                </div>
+              </div>
+
+              <!-- Workspace / Mostar -->
+              <div style="padding:0.6rem 0.9rem;flex-shrink:0">
+                <div style="font-size:0.68rem;font-weight:600;color:var(--purple);opacity:0.65;margin-bottom:0.28rem">
+                  Workspace — output</div>
+                <div style="font-size:0.74rem;color:var(--text-muted);font-style:italic;opacity:0.45">file will appear
+                  here&hellip;</div>
+              </div>
+
             </div>
 
+            <!-- Note -->
             <div
               style="background:var(--purple-dim);border:1px solid rgba(42,92,63,0.15);border-radius:8px;padding:0.85rem 1rem;flex-shrink:0">
-              <div style="font-size:0.75rem;font-weight:600;color:var(--purple);opacity:0.65;margin-bottom:0.3rem">
-                Note</div>
+              <div style="font-size:0.75rem;font-weight:600;color:var(--purple);opacity:0.65;margin-bottom:0.3rem">Note
+              </div>
               <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.52">This presentation was produced by
                 the same loop. One Cowork session, no code written by hand.</div>
             </div>
