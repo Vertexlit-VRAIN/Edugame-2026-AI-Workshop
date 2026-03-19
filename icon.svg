@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512"
+     role="img" aria-label="AI Agents in Education icon">
+  <defs>
+
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#17171c"/>
+      <stop offset="100%" stop-color="#0d0d11"/>
+    </linearGradient>
+
+    <!-- Radial gradient on the spark: brighter amber core, slightly deeper at tips -->
+    <radialGradient id="spark-fill" cx="42%" cy="38%" r="60%">
+      <stop offset="0%"   stop-color="#e8643e"/>
+      <stop offset="100%" stop-color="#b03a22"/>
+    </radialGradient>
+
+    <!-- Soft ambient glow behind the spark -->
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="22" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Tighter inner glow for the spark itself -->
+    <filter id="spark-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+  </defs>
+
+  <!-- Rounded-square background -->
+  <rect width="512" height="512" rx="108" ry="108" fill="url(#bg)"/>
+  <rect width="512" height="512" rx="108" ry="108"
+        fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1.5"/>
+
+  <!-- Ambient glow blob behind the spark -->
+  <circle cx="256" cy="256" r="130"
+          fill="#c84b31" opacity="0.12" filter="url(#glow)"/>
+
+  <!-- 4-pointed spark star
+       outer tips at top(256,101) right(411,256) bottom(256,411) left(101,256)
+       waist notches at NE(282.9,229.1) SE(282.9,282.9) SW(229.1,282.9) NW(229.1,229.1) -->
+  <!-- Shadow layer for depth -->
+  <polygon
+    points="256,101 282.9,229.1 411,256 282.9,282.9 256,411 229.1,282.9 101,256 229.1,229.1"
+    fill="#c84b31" opacity="0.20" filter="url(#glow)"/>
+
+  <!-- Main spark -->
+  <polygon
+    points="256,101 282.9,229.1 411,256 282.9,282.9 256,411 229.1,282.9 101,256 229.1,229.1"
+    fill="url(#spark-fill)" filter="url(#spark-glow)"/>
+
+  <!-- Specular highlight — small off-centre ellipse for a lit look -->
+  <ellipse cx="230" cy="210" rx="28" ry="18"
+           fill="white" opacity="0.09" transform="rotate(-35 230 210)"/>
+
+</svg>
