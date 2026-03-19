@@ -235,6 +235,7 @@
 
   function backToRing() {
     inDemoDetail = false;
+    RITEMS.forEach(function (r) { r.style.opacity = ''; r.style.transition = ''; });
     goTo('s4');
   }
 
@@ -244,12 +245,91 @@
   window.backToRing = backToRing;
 
   /* ── Ring item clicks ─────────────────────────────────────────────────  */
+  function selectFrontItem(el) {
+    var rect    = el.getBoundingClientRect();
+    var vw      = window.innerWidth;
+    var vh      = window.innerHeight;
+    var cx      = rect.left + rect.width  / 2;
+    var cy      = rect.top  + rect.height / 2;
+
+    /* CSS layout size (pre-perspective), used as the clone's natural dimensions */
+    var cssW    = el.offsetWidth;
+    var cssH    = el.offsetHeight;
+
+    /* How much the perspective container is zooming the card visually */
+    var perspFactor = rect.width / cssW;
+
+    /* Scale to cover every viewport corner, measured in CSS units */
+    var finalScale = Math.ceil(Math.max(
+      2 * cx        / cssW,
+      2 * (vw - cx) / cssW,
+      2 * cy        / cssH,
+      2 * (vh - cy) / cssH
+    )) + 1;
+
+    /* Clone first, before touching the original */
+    var clone = el.cloneNode(true);
+
+    /* Hide the original instantly — suppress the CSS opacity transition first */
+    el.style.transition = 'none';
+    el.style.opacity    = '0';
+
+    /* Clear any inherited inline opacity/transition from the original */
+    clone.style.opacity   = '';
+    clone.style.transition = '';
+
+    /* Clone keeps its natural CSS size; start transform matches the perspective zoom
+       so it looks pixel-identical to the original card from frame one */
+    clone.style.position        = 'fixed';
+    clone.style.left            = (cx - cssW / 2) + 'px';
+    clone.style.top             = (cy - cssH / 2) + 'px';
+    clone.style.width           = cssW + 'px';
+    clone.style.height          = cssH + 'px';
+    clone.style.margin          = '0';
+    clone.style.transform       = 'scale(' + perspFactor + ')';
+    clone.style.animation       = 'none';
+    clone.style.zIndex          = '500';
+    clone.style.pointerEvents   = 'none';
+    clone.style.transformOrigin = 'center center';
+    clone.style.transition      = [
+      'transform 0.42s cubic-bezier(0.55, 0, 1, 0.7)',
+      'opacity 0.38s cubic-bezier(0.4, 0, 1, 1)',
+      'border-radius 0.16s linear'
+    ].join(', ');
+
+    /* Blur backdrop — sits behind the clone, blurs everything else out */
+    var backdrop = document.createElement('div');
+    backdrop.style.position       = 'fixed';
+    backdrop.style.inset          = '0';
+    backdrop.style.zIndex         = '499';
+    backdrop.style.pointerEvents  = 'none';
+    backdrop.style.backdropFilter = 'blur(0px)';
+    backdrop.style.transition     = 'backdrop-filter 0.38s ease';
+
+    document.body.appendChild(backdrop);
+    document.body.appendChild(clone);
+
+    /* Force reflow so the browser registers the start states */
+    clone.getBoundingClientRect();
+
+    clone.style.transform         = 'scale(' + finalScale + ')';
+    clone.style.opacity           = '0';
+    clone.style.borderRadius      = '0px';
+    backdrop.style.backdropFilter = 'blur(14px)';
+
+    setTimeout(function () {
+      inDemoDetail = true;
+      goTo(DEMO_SLIDES[ringIndex + 1]);
+      clone.remove();
+      backdrop.remove();
+    }, 420);
+  }
+
   RITEMS.forEach(function (el, i) {
     el.addEventListener('click', function () {
       var diff = ((i - ringIndex) % N + N) % N;
       if (diff === 0) {
-        inDemoDetail = true;
-        goTo(DEMO_SLIDES[ringIndex + 1]);
+        selectFrontItem(el);
       } else if (diff === 1 || diff <= N / 2) {
         spinRing(1);
       } else {
@@ -264,8 +344,9 @@
       if (e.key === 'ArrowLeft') { spinRing(-1); return; }
       if (e.key === 'ArrowRight') { spinRing(1); return; }
       if (e.key === 'Enter' || e.key === ' ') {
-        inDemoDetail = true;
-        goTo(DEMO_SLIDES[ringIndex + 1]);
+        e.preventDefault();
+        var frontEl = RITEMS.find(function (r) { return r.classList.contains('front'); });
+        if (frontEl) selectFrontItem(frontEl);
         return;
       }
     }
