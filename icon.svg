@@ -1,62 +1,100 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512"
-     role="img" aria-label="AI Agents in Education icon">
+     role="img" aria-label="AI Agents in Education – robot icon">
   <defs>
 
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%"   stop-color="#17171c"/>
-      <stop offset="100%" stop-color="#0d0d11"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"  stop-color="#17171c"/>
+      <stop offset="100%" stop-color="#0c0c10"/>
     </linearGradient>
 
-    <!-- Radial gradient on the spark: brighter amber core, slightly deeper at tips -->
-    <radialGradient id="spark-fill" cx="42%" cy="38%" r="60%">
-      <stop offset="0%"   stop-color="#e8643e"/>
-      <stop offset="100%" stop-color="#b03a22"/>
-    </radialGradient>
+    <linearGradient id="head-fill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#253344"/>
+      <stop offset="100%" stop-color="#19242f"/>
+    </linearGradient>
 
-    <!-- Soft ambient glow behind the spark -->
-    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="22" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <filter id="glow-soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="18" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
 
-    <!-- Tighter inner glow for the spark itself -->
-    <filter id="spark-glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="7" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <filter id="eye-glow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="ant-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
 
   </defs>
 
-  <!-- Rounded-square background -->
-  <rect width="512" height="512" rx="108" ry="108" fill="url(#bg)"/>
-  <rect width="512" height="512" rx="108" ry="108"
-        fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1.5"/>
+  <!-- BACKGROUND -->
+  <rect width="512" height="512" rx="108" fill="url(#bg)"/>
+  <rect width="512" height="512" rx="108" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1.5"/>
 
-  <!-- Ambient glow blob behind the spark -->
-  <circle cx="256" cy="256" r="130"
-          fill="#c84b31" opacity="0.12" filter="url(#glow)"/>
+  <!-- ambient glow -->
+  <ellipse cx="256" cy="290" rx="160" ry="140" fill="#5de4c7" opacity="0.05" filter="url(#glow-soft)"/>
 
-  <!-- 4-pointed spark star
-       outer tips at top(256,101) right(411,256) bottom(256,411) left(101,256)
-       waist notches at NE(282.9,229.1) SE(282.9,282.9) SW(229.1,282.9) NW(229.1,229.1) -->
-  <!-- Shadow layer for depth -->
+  <!-- ANTENNA -->
+  <line x1="256" y1="84" x2="256" y2="145" stroke="#5de4c7" stroke-width="11" stroke-linecap="round"/>
+  <circle cx="256" cy="68" r="26" fill="#5de4c7" opacity="0.22" filter="url(#ant-glow)"/>
+  <circle cx="256" cy="68" r="16" fill="#5de4c7"/>
+  <circle cx="250" cy="62" r="5" fill="white" opacity="0.35"/>
+
+  <!-- EAR PODS -->
+  <circle cx="130" cy="258" r="34" fill="#1b2839"/>
+  <circle cx="130" cy="258" r="34" fill="none" stroke="#5de4c7" stroke-width="2.5" opacity="0.28"/>
+  <circle cx="130" cy="258" r="16" fill="#5de4c7" opacity="0.10"/>
+
+  <circle cx="382" cy="258" r="34" fill="#1b2839"/>
+  <circle cx="382" cy="258" r="34" fill="none" stroke="#5de4c7" stroke-width="2.5" opacity="0.28"/>
+  <circle cx="382" cy="258" r="16" fill="#5de4c7" opacity="0.10"/>
+
+  <!-- HEAD -->
+  <rect x="130" y="145" width="252" height="218" rx="60" fill="url(#head-fill)"/>
+  <rect x="130" y="145" width="252" height="108" rx="60" fill="rgba(255,255,255,0.04)"/>
+  <rect x="130" y="145" width="252" height="218" rx="60"
+        fill="none" stroke="#5de4c7" stroke-width="2.5" opacity="0.22"/>
+
+  <!-- EYES -->
+  <rect x="160" y="204" width="84" height="64" rx="22"
+        fill="#5de4c7" opacity="0.28" filter="url(#eye-glow)"/>
+  <rect x="160" y="204" width="84" height="64" rx="22" fill="#5de4c7" opacity="0.90"/>
+  <ellipse cx="182" cy="219" rx="15" ry="10" fill="white" opacity="0.22" transform="rotate(-12 182 219)"/>
+
+  <rect x="268" y="204" width="84" height="64" rx="22"
+        fill="#5de4c7" opacity="0.28" filter="url(#eye-glow)"/>
+  <rect x="268" y="204" width="84" height="64" rx="22" fill="#5de4c7" opacity="0.90"/>
+  <ellipse cx="290" cy="219" rx="15" ry="10" fill="white" opacity="0.22" transform="rotate(-12 290 219)"/>
+
+  <!-- MOUTH GRILLE -->
+  <line x1="188" y1="310" x2="324" y2="310"
+        stroke="#5de4c7" stroke-width="5" stroke-linecap="round" opacity="0.42"/>
+  <line x1="204" y1="327" x2="308" y2="327"
+        stroke="#5de4c7" stroke-width="3.5" stroke-linecap="round" opacity="0.24"/>
+
+  <!-- NECK -->
+  <rect x="224" y="363" width="64" height="38" rx="10" fill="#19242f"/>
+  <rect x="224" y="363" width="64" height="38" rx="10"
+        fill="none" stroke="#5de4c7" stroke-width="1.5" opacity="0.18"/>
+
+  <!-- SHOULDER PLATES -->
+  <path d="M130 388 Q142 375 224 375 L224 401 Q142 401 130 414 Z" fill="#1b2839"/>
+  <path d="M130 388 Q142 375 224 375 L224 401 Q142 401 130 414 Z"
+        fill="none" stroke="#5de4c7" stroke-width="1.5" opacity="0.18"/>
+  <path d="M382 388 Q370 375 288 375 L288 401 Q370 401 382 414 Z" fill="#1b2839"/>
+  <path d="M382 388 Q370 375 288 375 L288 401 Q370 401 382 414 Z"
+        fill="none" stroke="#5de4c7" stroke-width="1.5" opacity="0.18"/>
+
+  <!-- CHEST PANEL -->
+  <rect x="148" y="401" width="216" height="76" rx="22" fill="#1b2839"/>
+  <rect x="148" y="401" width="216" height="76" rx="22"
+        fill="none" stroke="#5de4c7" stroke-width="2" opacity="0.2"/>
+  <!-- chest emblem: 4-pt spark echoing the original favicon -->
+  <circle cx="256" cy="439" r="22" fill="#5de4c7" opacity="0.10" filter="url(#eye-glow)"/>
   <polygon
-    points="256,101 282.9,229.1 411,256 282.9,282.9 256,411 229.1,282.9 101,256 229.1,229.1"
-    fill="#c84b31" opacity="0.20" filter="url(#glow)"/>
-
-  <!-- Main spark -->
-  <polygon
-    points="256,101 282.9,229.1 411,256 282.9,282.9 256,411 229.1,282.9 101,256 229.1,229.1"
-    fill="url(#spark-fill)" filter="url(#spark-glow)"/>
-
-  <!-- Specular highlight — small off-centre ellipse for a lit look -->
-  <ellipse cx="230" cy="210" rx="28" ry="18"
-           fill="white" opacity="0.09" transform="rotate(-35 230 210)"/>
+    points="256,420 260.8,434.8 275.6,439 260.8,443.2 256,458 251.2,443.2 236.4,439 251.2,434.8"
+    fill="#5de4c7" opacity="0.70"/>
 
 </svg>

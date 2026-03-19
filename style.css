@@ -2,20 +2,20 @@
 
 /* ─── Design Tokens ─────────────────────────────────────────────────── */
 :root {
-  --bg: #faf6f0;
-  --surface: rgba(0, 0, 0, 0.025);
-  --surface-2: rgba(0, 0, 0, 0.055);
-  --border: rgba(0, 0, 0, 0.08);
-  --border-bright: rgba(0, 0, 0, 0.18);
-  --text: #1a1410;
-  --text-muted: #7a6555;
-  --cyan: #2d4a7a;
-  --cyan-dim: rgba(45, 74, 122, 0.10);
-  --purple: #2a5c3f;
-  --purple-dim: rgba(42, 92, 63, 0.10);
+  --bg: #eef4fb;
+  --surface: rgba(25, 36, 47, 0.035);
+  --surface-2: rgba(25, 36, 47, 0.07);
+  --border: rgba(25, 36, 47, 0.09);
+  --border-bright: rgba(25, 36, 47, 0.22);
+  --text: #19242f;
+  --text-muted: #4d6479;
+  --cyan: #0d8077;
+  --cyan-dim: rgba(13, 128, 119, 0.12);
+  --purple: #2d4a7a;
+  --purple-dim: rgba(45, 74, 122, 0.10);
   --amber: #c84b31;
   --amber-dim: rgba(200, 75, 49, 0.10);
-  --green: #3d7a52;
+  --green: #1a7a5e;
   --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
   --serif: 'Lora', Georgia, 'Times New Roman', serif;
   --mono: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
@@ -48,8 +48,8 @@ body::before {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 60% 50% at 15% 20%, rgba(45, 74, 122, 0.05) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 40% at 85% 80%, rgba(200, 75, 49, 0.04) 0%, transparent 70%);
+    radial-gradient(ellipse 60% 50% at 15% 20%, rgba(13, 128, 119, 0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 85% 80%, rgba(45, 74, 122, 0.06) 0%, transparent 70%);
 }
 
 /* ─── Paper Grain Texture ─────────────────────────────────────────────  */
@@ -81,15 +81,15 @@ body::after {
   justify-content: center;
   padding: 4vh 5vw 7vh;
   opacity: 0;
-  transform: translateY(14px) scale(0.993);
-  transition: opacity 0.45s ease, transform 0.45s ease;
+  transform: translateY(10px);
+  transition: opacity 0.52s cubic-bezier(0.16, 1, 0.3, 1), transform 0.52s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
   will-change: opacity, transform;
 }
 
 .slide.active {
   opacity: 1;
-  transform: translateY(0) scale(1);
+  transform: translateY(0);
   pointer-events: all;
 }
 
@@ -103,7 +103,7 @@ body::after {
   display: flex;
   align-items: center;
   gap: 1.4rem;
-  background: rgba(242, 244, 248, 0.92);
+  background: rgba(230, 240, 250, 0.92);
   border: 1px solid var(--border);
   border-radius: 99px;
   padding: 0.48rem 1.2rem;
@@ -208,7 +208,7 @@ h1.big {
   font-weight: 700;
   letter-spacing: -0.015em;
   line-height: 1.05;
-  background: linear-gradient(160deg, #1a1410 0%, rgba(26, 20, 16, 0.65) 100%);
+  background: linear-gradient(160deg, #19242f 0%, rgba(37, 51, 68, 0.60) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -229,8 +229,8 @@ h1.big {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  border: 1px solid rgba(42, 92, 63, 0.30);
-  background: rgba(42, 92, 63, 0.06);
+  border: 1px solid rgba(45, 74, 122, 0.25);
+  background: rgba(45, 74, 122, 0.06);
   border-radius: 99px;
   padding: 0.45rem 1.1rem;
   font-size: 1rem;
@@ -278,8 +278,8 @@ h1.big {
 }
 
 .ccard.highlight {
-  border-color: rgba(45, 74, 122, 0.22);
-  background: rgba(45, 74, 122, 0.04);
+  border-color: rgba(13, 128, 119, 0.22);
+  background: rgba(13, 128, 119, 0.05);
 }
 
 .ccard-label {
@@ -327,7 +327,7 @@ h1.big {
 }
 
 .ccard.highlight .sn {
-  color: rgba(45, 74, 122, 0.35);
+  color: rgba(13, 128, 119, 0.35);
 }
 
 /* ─────────────────────────────────────────────────────────────────────
@@ -762,14 +762,14 @@ h1.big {
 }
 
 .d1-btn.d1-btn-cyan {
-  border-color: rgba(45, 74, 122, 0.38);
+  border-color: rgba(13, 128, 119, 0.35);
   color: var(--cyan);
   background: var(--cyan-dim);
 }
 
 .d1-btn.d1-btn-cyan:hover:not(:disabled) {
   border-color: var(--cyan);
-  background: rgba(45, 74, 122, 0.15);
+  background: rgba(13, 128, 119, 0.15);
 }
 
 .d1-btn:disabled {
@@ -966,7 +966,7 @@ h1.big {
   font-size: 1.08rem;
   color: var(--text-muted);
   line-height: 1.65;
-  border-left: 2px solid rgba(45, 74, 122, 0.2);
+  border-left: 2px solid rgba(13, 128, 119, 0.22);
 }
 
 .disc-item + .disc-item {
