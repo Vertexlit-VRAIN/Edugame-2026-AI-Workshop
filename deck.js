@@ -128,6 +128,8 @@
   }
 
   /* ── Demo 1 · Interactive prompt comparison ──────────────────────────  */
+  var D1_THINKING = 'The paragraph says "AI is important" \u2014 but that is just restating the premise. Circular.\n\nIs there a main claim anywhere? No. The student describes adoption without positioning an argument. The reader finishes with no idea what the essay will defend.\n\nTwo weaknesses are obvious. First: "some people think it is good, some bad" \u2014 avoidance, not analysis. No position taken, nothing added analytically. Second: every statement is unanchored. "Many fields", "more and more" \u2014 impressionistic, not evidential.\n\nFor the revision I need data that grounds the argument and a tension worth naming. The HEPI 2025 figure \u2014 92% of UK undergraduates using AI for academic work \u2014 is precise and sourced. The tension: adoption is happening without a guidance framework.\n\nArgumentative strength: has to be 1 out of 5. No claim, no evidence, no direction. The gap between this and a strong paragraph is not vocabulary \u2014 it is specificity of thought.';
+
   var D1_RESP = {
     a: 'This is a reasonable start! You cover a broad topic and give a sense of how widely AI is being adopted. To improve it, try adding more specific examples or evidence to support your points. It would also help to clarify your main argument \u2014 what exactly are you trying to say about AI in education? Overall you have a good foundation to build on.',
 
@@ -142,18 +144,63 @@
     if (!btn || !box || btn.disabled) return;
     if (d1Timers[panel]) clearInterval(d1Timers[panel]);
     btn.disabled = true;
-    var text = D1_RESP[panel];
-    var i = 0;
     box.innerHTML = '';
-    d1Timers[panel] = setInterval(function () {
-      if (i < text.length) {
-        box.innerHTML += text[i] === '\n' ? '<br>' : text[i];
-        i++;
-        box.scrollTop = box.scrollHeight;
-      } else {
-        clearInterval(d1Timers[panel]);
-      }
-    }, 10);
+
+    if (panel === 'b') {
+      /* Phase 1 — thinking block */
+      var thinkWrap = document.createElement('div');
+      thinkWrap.className = 'd1-think';
+      thinkWrap.innerHTML =
+        '<div class="d1-think-label"><span class="d1-think-dot"></span>Thinking</div>' +
+        '<div class="d1-think-body"></div>';
+      box.appendChild(thinkWrap);
+      var thinkBody = thinkWrap.querySelector('.d1-think-body');
+      var thinkDot  = thinkWrap.querySelector('.d1-think-dot');
+      var ti = 0;
+      var thinking = D1_THINKING;
+
+      d1Timers[panel] = setInterval(function () {
+        if (ti < thinking.length) {
+          thinkBody.innerHTML += thinking[ti] === '\n' ? '<br>' : thinking[ti];
+          ti++;
+          box.scrollTop = box.scrollHeight;
+        } else {
+          clearInterval(d1Timers[panel]);
+          thinkDot.classList.add('done');
+
+          /* Phase 2 — pause then type the structured answer */
+          d1Timers[panel] = setTimeout(function () {
+            var answerEl = document.createElement('div');
+            box.appendChild(answerEl);
+            var text = D1_RESP[panel];
+            var i = 0;
+            d1Timers[panel] = setInterval(function () {
+              if (i < text.length) {
+                answerEl.innerHTML += text[i] === '\n' ? '<br>' : text[i];
+                i++;
+                box.scrollTop = box.scrollHeight;
+              } else {
+                clearInterval(d1Timers[panel]);
+              }
+            }, 10);
+          }, 480);
+        }
+      }, 4);
+
+    } else {
+      /* Panel A — direct response, no thinking phase */
+      var text = D1_RESP[panel];
+      var i = 0;
+      d1Timers[panel] = setInterval(function () {
+        if (i < text.length) {
+          box.innerHTML += text[i] === '\n' ? '<br>' : text[i];
+          i++;
+          box.scrollTop = box.scrollHeight;
+        } else {
+          clearInterval(d1Timers[panel]);
+        }
+      }, 10);
+    }
   };
 
   function d1Reset() {
