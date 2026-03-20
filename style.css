@@ -54,11 +54,11 @@ body::before {
 
 /* ─── Paper Grain Texture ─────────────────────────────────────────────  */
 @keyframes grain-drift {
-  0%   { background-position: 0 0;        opacity: 0.045; }
-  25%  { background-position: 75px 150px; opacity: 0.065; }
-  50%  { background-position: 300px 300px; opacity: 0.050; }
-  75%  { background-position: 225px 150px; opacity: 0.070; }
-  100% { background-position: 0 0;        opacity: 0.045; }
+  0%   { background-position: 0 0;          opacity: 0.08; }
+  25%  { background-position: 75px 150px;   opacity: 0.16; }
+  50%  { background-position: 300px 300px;  opacity: 0.10; }
+  75%  { background-position: 225px 150px;  opacity: 0.18; }
+  100% { background-position: 0 0;          opacity: 0.08; }
 }
 
 body::after {
@@ -67,10 +67,9 @@ body::after {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.055;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.45' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 300px 300px;
-  animation: grain-drift 28s ease-in-out infinite;
+  animation: grain-drift 20s ease-in-out infinite;
   will-change: background-position, opacity;
 }
 
