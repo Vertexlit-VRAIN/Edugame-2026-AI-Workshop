@@ -1025,3 +1025,99 @@ h1.big {
 .disc-item::before {
   content: none;
 }
+
+/* ─── Dark Theme ─────────────────────────────────────────────────────  */
+[data-theme="dark"] {
+  --bg: #0f1117;
+  --surface: rgba(93, 228, 199, 0.04);
+  --surface-2: rgba(93, 228, 199, 0.08);
+  --border: rgba(93, 228, 199, 0.10);
+  --border-bright: rgba(93, 228, 199, 0.24);
+  --text: #dde6f0;
+  --text-muted: #7fa4bc;
+  --cyan: #5de4c7;
+  --cyan-dim: rgba(93, 228, 199, 0.12);
+  --purple: #7b9fd4;
+  --purple-dim: rgba(123, 159, 212, 0.12);
+  --amber: #f4845f;
+  --amber-dim: rgba(244, 132, 95, 0.12);
+  --green: #4ecba0;
+}
+
+[data-theme="dark"] body::before {
+  background:
+    radial-gradient(ellipse 60% 50% at 15% 20%, rgba(93, 228, 199, 0.05) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 85% 80%, rgba(123, 159, 212, 0.06) 0%, transparent 70%);
+}
+
+[data-theme="dark"] body::after {
+  opacity: 0.18;
+}
+
+[data-theme="dark"] h1.big {
+  background: linear-gradient(160deg, #dde6f0 0%, rgba(221, 230, 240, 0.55) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme="dark"] #nav {
+  background: rgba(15, 17, 23, 0.88);
+  border-color: rgba(93, 228, 199, 0.14);
+}
+
+[data-theme="dark"] .ccard.highlight {
+  border-color: rgba(93, 228, 199, 0.4);
+  background: rgba(93, 228, 199, 0.06);
+}
+
+[data-theme="dark"] .live-badge {
+  background: rgba(123, 159, 212, 0.14);
+  color: var(--purple);
+  border-color: rgba(123, 159, 212, 0.22);
+}
+
+[data-theme="dark"] .d1-btn-cyan {
+  background: rgba(93, 228, 199, 0.10);
+  color: var(--cyan);
+  border-color: rgba(93, 228, 199, 0.22);
+}
+
+[data-theme="dark"] .d1-btn-cyan:hover {
+  background: rgba(93, 228, 199, 0.18);
+}
+
+[data-theme="dark"] .disc-item {
+  border-left-color: rgba(93, 228, 199, 0.22);
+}
+
+[data-theme="dark"] .ritem {
+  background: rgba(15, 20, 30, 0.82);
+  border-color: rgba(93, 228, 199, 0.12);
+}
+
+[data-theme="dark"] .scard {
+  background: rgba(93, 228, 199, 0.04);
+  border-color: rgba(93, 228, 199, 0.10);
+}
+
+[data-theme="dark"] .d1-output {
+  background: rgba(93, 228, 199, 0.04);
+  border-color: rgba(93, 228, 199, 0.10);
+}
+
+[data-theme="dark"] .d1-think {
+  border-left-color: rgba(93, 228, 199, 0.28);
+}
+
+/* ─── Theme Toggle Button ────────────────────────────────────────────  */
+#btn-theme {
+  font-size: 1rem;
+  line-height: 1;
+  opacity: 0.72;
+  transition: opacity 0.2s, color 0.2s, background 0.2s;
+}
+
+#btn-theme:hover {
+  opacity: 1;
+}

@@ -405,4 +405,26 @@
   /* ── Set initial ring info colour ────────────────────────────────────  */
   document.getElementById('rinfo-name').style.color = DEMO_META[0].color;
 
+  /* ── Dark / light theme toggle ───────────────────────────────────────  */
+  (function () {
+    var btn = document.getElementById('btn-theme');
+    function syncIcon() {
+      var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      btn.innerHTML = dark ? '&#9728;' : '&#9790;';
+      btn.title = dark ? 'Switch to light mode' : 'Switch to dark mode';
+    }
+    syncIcon();
+    window.toggleTheme = function () {
+      var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      if (dark) {
+        document.documentElement.removeAttribute('data-theme');
+        try { localStorage.setItem('theme', 'light'); } catch (e) {}
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        try { localStorage.setItem('theme', 'dark'); } catch (e) {}
+      }
+      syncIcon();
+    };
+  }());
+
 }());
