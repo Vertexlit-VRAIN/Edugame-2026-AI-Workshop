@@ -32,10 +32,10 @@
         <div class="title-rule"></div>
         <h1 class="big">AI Agents<br>in Education</h1>
         <p class="title-sub">From Prompts to Autonomous Systems</p>
-        <div class="live-badge">
+        <!--div class="live-badge">
           <span class="live-dot"></span>
           Live demonstration
-        </div>
+        </div-->
       </div>
     </section>
 
@@ -43,7 +43,15 @@
        SLIDE 2 · WHY THIS MATTERS FOR FACULTY
   ═══════════════════════════════════════════════════════════════════════ -->
     <section class="slide" id="s3">
-      <div style="width:100%;max-width:1080px;height:82vh;display:flex;flex-direction:column">
+
+      <!-- ── Hook overlay (shown first) ─────────────────────────────────── -->
+      <div id="s3-hook">
+        <div id="s3-hook-q">How many of you used AI for coursework last week?</div>
+        <!--div id="s3-hook-hint">&#9654; press any key or click to see the data</div-->
+      </div>
+
+      <!-- ── Data content (revealed on advance) ─────────────────────────── -->
+      <div id="s3-data" style="width:100%;max-width:1080px;height:82vh;display:flex;flex-direction:column">
         <div class="eyebrow">The Pressure on Education</div>
         <h2 class="section-title" style="margin-bottom:1.6rem">The Classroom Is Already There</h2>
 
@@ -80,7 +88,7 @@
               <span class="legend-dot" style="background:var(--border-bright);margin-left:1rem"></span><span>2024</span>
             </div>
 
-            <div class="hepi-chart">
+            <div class="hepi-chart bars-hidden">
 
               <div class="chart-row">
                 <div class="chart-label">Explain concepts</div>
@@ -134,7 +142,7 @@
           </div>
 
         </div>
-      </div>
+      </div><!-- /s3-data -->
     </section>
 
     <!-- ══════════════════════════════════════════════════════════════════════

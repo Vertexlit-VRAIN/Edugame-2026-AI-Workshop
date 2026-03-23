@@ -252,6 +252,37 @@
     }, 180);
   }
 
+  /* ── Slide 2 (s3) hook reveal state ──────────────────────────────────  */
+  var s3Revealed = false;
+
+  function revealS3() {
+    s3Revealed = true;
+    var hook = document.getElementById('s3-hook');
+    var data = document.getElementById('s3-data');
+    var chart = document.querySelector('.hepi-chart');
+    if (hook) hook.classList.add('hidden');
+    if (data) data.classList.add('revealed');
+    if (chart) {
+      // small delay so the data fade-in starts before bars animate
+      setTimeout(function () { chart.classList.remove('bars-hidden'); }, 220);
+    }
+  }
+
+  function resetS3() {
+    s3Revealed = false;
+    var hook = document.getElementById('s3-hook');
+    var data = document.getElementById('s3-data');
+    var chart = document.querySelector('.hepi-chart');
+    if (hook) hook.classList.remove('hidden');
+    if (data) data.classList.remove('revealed');
+    if (chart) chart.classList.add('bars-hidden');
+  }
+
+  // click on slide s3 while hook is showing also triggers reveal
+  document.getElementById('s3').addEventListener('click', function () {
+    if (currentId === 's3' && !s3Revealed) revealS3();
+  });
+
   /* ── Slide engine ─────────────────────────────────────────────────────  */
   function goTo(id) {
     if (id === currentId) return;
@@ -264,6 +295,7 @@
     currentId = id;
     updateCounter();
     if (id === 'd1') d1Reset();
+    if (id === 's3') resetS3();
   }
 
   function updateCounter() {
@@ -276,6 +308,7 @@
 
   function next() {
     if (inDemoDetail) return;
+    if (currentId === 's3' && !s3Revealed) { revealS3(); return; }
     var idx = LINEAR.indexOf(currentId);
     if (idx < LINEAR.length - 1) goTo(LINEAR[idx + 1]);
   }
