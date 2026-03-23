@@ -228,17 +228,16 @@
   ═══════════════════════════════════════════════════════════════════════ -->
     <section class="slide" id="d1">
       <button class="back-btn" onclick="backToRing()">&#8592; Back to demos</button>
-      <div style="width:100%;max-width:1060px;height:82vh;display:flex;flex-direction:column;padding-top:4rem">
+      <div style="width:100%;max-width:min(90vw,1500px);height:87vh;display:flex;flex-direction:column;padding-top:clamp(1.5rem,2.5vh,3.5rem)">
 
-        <div class="demo-num" style="color:var(--cyan)">Demo 01</div>
         <h2 class="demo-h">System 2 Prompting</h2>
         <p class="demo-sub" style="margin-bottom:1.2rem">Same question, two prompts: observe what changes
         </p>
 
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;flex:1;min-height:0">
+        <div style="display:flex;gap:0;flex:1;min-height:0">
 
           <!-- ── Panel A · System 1 ──────────────────────────────────── -->
-          <div style="display:flex;flex-direction:column;gap:0.65rem;min-height:0">
+          <div style="display:flex;flex-direction:column;gap:0.65rem;min-height:0;flex:1 1 0;min-width:180px;padding-right:0.6rem">
 
             <div style="display:flex;align-items:center;gap:0.6rem;flex-shrink:0">
               <span
@@ -264,8 +263,11 @@
 
           </div>
 
+          <!-- ── Drag divider ────────────────────────────────────────── -->
+          <div id="d1-divider"></div>
+
           <!-- ── Panel B · System 2 ──────────────────────────────────── -->
-          <div style="display:flex;flex-direction:column;gap:0.65rem;min-height:0">
+          <div style="display:flex;flex-direction:column;gap:0.65rem;min-height:0;flex:1.65 1 0;min-width:240px;padding-left:0.6rem">
 
             <div style="display:flex;align-items:center;gap:0.6rem;flex-shrink:0">
               <span
@@ -274,8 +276,8 @@
               <span style="font-size:0.88rem;color:var(--text-muted)">Structured prompt</span>
             </div>
 
-            <div
-              style="background:var(--surface);border:1px solid rgba(45,74,122,0.18);border-radius:8px;padding:0.9rem 1rem;font-family:var(--mono);font-size:0.8rem;line-height:1.65;color:var(--text-muted);flex-shrink:0">
+            <div id="d1-prompt-b" onclick="d1TogglePrompt()"
+              style="background:var(--surface);border:1px solid rgba(45,74,122,0.18);border-radius:8px;padding:0.9rem 1rem;font-family:var(--mono);font-size:0.8rem;line-height:1.65;color:var(--text-muted);flex-shrink:0;cursor:pointer">
               <span style="color:var(--cyan);opacity:0.85">You are reviewing an undergraduate essay paragraph.</span>
               Paragraph:<br><br>
               <span style="color:var(--text);opacity:0.75">"AI has been used in many fields and has become very popular.
@@ -307,9 +309,8 @@
   ═══════════════════════════════════════════════════════════════════════ -->
     <section class="slide" id="d2">
       <button class="back-btn" onclick="backToRing()">&#8592; Back to demos</button>
-      <div style="width:100%;max-width:1060px;height:82vh;display:flex;flex-direction:column;padding-top:4rem">
+      <div style="width:100%;max-width:min(90vw,1500px);height:87vh;display:flex;flex-direction:column;padding-top:clamp(1.5rem,2.5vh,3.5rem)">
 
-        <div class="demo-num" style="color:var(--purple)">Demo 02</div>
         <h2 class="demo-h">Claude Cowork</h2>
         <p class="demo-sub" style="margin-bottom:1.2rem">The Agent Action Loop</p>
 
@@ -462,9 +463,8 @@
   ═══════════════════════════════════════════════════════════════════════ -->
     <section class="slide" id="d3">
       <button class="back-btn" onclick="backToRing()">&#8592; Back to demos</button>
-      <div style="width:100%;max-width:1060px;height:82vh;display:flex;flex-direction:column;padding-top:4rem">
+      <div style="width:100%;max-width:min(90vw,1500px);height:87vh;display:flex;flex-direction:column;padding-top:clamp(1.5rem,2.5vh,3.5rem)">
 
-        <div class="demo-num" style="color:var(--amber)">Demo 03</div>
         <h2 class="demo-h">Delegation Architecture</h2>
         <p class="demo-sub" style="margin-bottom:1.2rem">One instruction &mdash; parallel execution &mdash; no human in
           the loop</p>

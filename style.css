@@ -38,6 +38,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font);
+  font-size: clamp(15px, 1.1vw, 22px);
 }
 
 /* ─── Ambient Background ─────────────────────────────────────────────  */
@@ -750,6 +751,55 @@ h1.big {
   color: var(--text-muted);
   max-width: 400px;
   transition: opacity 0.22s ease;
+}
+
+/* ─── Demo 1 · System 2 prompt collapse ─────────────────────────────── */
+#d1-prompt-b {
+  max-height: 600px;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.35s ease, padding 0.35s ease;
+}
+
+#d1-prompt-b.collapsed {
+  max-height: 2.6rem;
+  opacity: 0.35;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+#d1-prompt-b.collapsed:hover {
+  opacity: 0.6;
+  border-color: rgba(45, 74, 122, 0.4);
+}
+
+/* ─── Demo 1 · Resizable panel divider ──────────────────────────────── */
+#d1-divider {
+  width: 14px;
+  flex-shrink: 0;
+  cursor: col-resize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  position: relative;
+  z-index: 10;
+}
+
+#d1-divider::after {
+  content: '';
+  display: block;
+  width: 2px;
+  height: 44px;
+  background: var(--border);
+  border-radius: 2px;
+  transition: background 0.2s, height 0.2s, width 0.15s;
+}
+
+#d1-divider:hover::after,
+#d1-divider.is-dragging::after {
+  background: var(--border-bright);
+  height: 64px;
+  width: 3px;
 }
 
 /* ─────────────────────────────────────────────────────────────────────

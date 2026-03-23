@@ -147,6 +147,10 @@
     box.innerHTML = '';
 
     if (panel === 'b') {
+      /* Collapse the prompt box to free vertical space for the response */
+      var promptB = document.getElementById('d1-prompt-b');
+      if (promptB) promptB.classList.add('collapsed');
+
       /* Phase 1 — thinking block */
       var thinkWrap = document.createElement('div');
       thinkWrap.className = 'd1-think';
@@ -211,6 +215,8 @@
       if (btn) btn.disabled = false;
       if (box) box.innerHTML = '<span style="opacity:0.32;font-style:italic">Response will appear here\u2026</span>';
     });
+    var promptB = document.getElementById('d1-prompt-b');
+    if (promptB) promptB.classList.remove('collapsed');
   }
 
   /* ── Ring rotation ────────────────────────────────────────────────────  */
@@ -290,6 +296,11 @@
   window.prev = prev;
   window.next = next;
   window.backToRing = backToRing;
+
+  window.d1TogglePrompt = function () {
+    var promptB = document.getElementById('d1-prompt-b');
+    if (promptB) promptB.classList.toggle('collapsed');
+  };
 
   /* ── Ring item clicks ─────────────────────────────────────────────────  */
   function selectFrontItem(el) {
@@ -404,6 +415,47 @@
 
   /* ── Set initial ring info colour ────────────────────────────────────  */
   document.getElementById('rinfo-name').style.color = DEMO_META[0].color;
+
+  /* ── Demo 1 · Resizable panel divider ────────────────────────────────  */
+  (function () {
+    var divider = document.getElementById('d1-divider');
+    if (!divider) return;
+    var container = divider.parentElement;
+    var panelA    = container.children[0];
+    var panelB    = container.children[2];
+
+    var dragging = false;
+    var startX, startAW, startBW;
+
+    divider.addEventListener('mousedown', function (e) {
+      dragging = true;
+      startX   = e.clientX;
+      startAW  = panelA.getBoundingClientRect().width;
+      startBW  = panelB.getBoundingClientRect().width;
+      divider.classList.add('is-dragging');
+      document.body.style.cursor     = 'col-resize';
+      document.body.style.userSelect = 'none';
+      e.preventDefault();
+    });
+
+    document.addEventListener('mousemove', function (e) {
+      if (!dragging) return;
+      var dx    = e.clientX - startX;
+      var total = startAW + startBW;
+      var newA  = Math.max(180, Math.min(total - 240, startAW + dx));
+      var newB  = total - newA;
+      panelA.style.flex = '0 0 ' + newA + 'px';
+      panelB.style.flex = '0 0 ' + newB + 'px';
+    });
+
+    document.addEventListener('mouseup', function () {
+      if (!dragging) return;
+      dragging = false;
+      divider.classList.remove('is-dragging');
+      document.body.style.cursor     = '';
+      document.body.style.userSelect = '';
+    });
+  }());
 
   /* ── Dark / light theme toggle ───────────────────────────────────────  */
   (function () {
