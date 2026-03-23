@@ -416,15 +416,14 @@
   /* ── Set initial ring info colour ────────────────────────────────────  */
   document.getElementById('rinfo-name').style.color = DEMO_META[0].color;
 
-  /* ── Demo 1 · Resizable panel divider ────────────────────────────────  */
-  (function () {
-    var divider = document.getElementById('d1-divider');
+  /* ── Resizable panel divider factory ─────────────────────────────────  */
+  function makeDivider(id, minA, minB) {
+    var divider = document.getElementById(id);
     if (!divider) return;
     var container = divider.parentElement;
     var panelA    = container.children[0];
     var panelB    = container.children[2];
-
-    var dragging = false;
+    var dragging  = false;
     var startX, startAW, startBW;
 
     divider.addEventListener('mousedown', function (e) {
@@ -442,7 +441,7 @@
       if (!dragging) return;
       var dx    = e.clientX - startX;
       var total = startAW + startBW;
-      var newA  = Math.max(180, Math.min(total - 240, startAW + dx));
+      var newA  = Math.max(minA, Math.min(total - minB, startAW + dx));
       var newB  = total - newA;
       panelA.style.flex = '0 0 ' + newA + 'px';
       panelB.style.flex = '0 0 ' + newB + 'px';
@@ -455,7 +454,10 @@
       document.body.style.cursor     = '';
       document.body.style.userSelect = '';
     });
-  }());
+  }
+
+  makeDivider('d1-divider', 180, 240);
+  makeDivider('d2-divider', 180, 260);
 
   /* ── Dark / light theme toggle ───────────────────────────────────────  */
   (function () {

@@ -772,8 +772,9 @@ h1.big {
   border-color: rgba(45, 74, 122, 0.4);
 }
 
-/* ─── Demo 1 · Resizable panel divider ──────────────────────────────── */
-#d1-divider {
+/* ─── Demo 1 & 2 · Resizable panel dividers ─────────────────────────── */
+#d1-divider,
+#d2-divider {
   width: 14px;
   flex-shrink: 0;
   cursor: col-resize;
@@ -785,7 +786,8 @@ h1.big {
   z-index: 10;
 }
 
-#d1-divider::after {
+#d1-divider::after,
+#d2-divider::after {
   content: '';
   display: block;
   width: 2px;
@@ -796,7 +798,9 @@ h1.big {
 }
 
 #d1-divider:hover::after,
-#d1-divider.is-dragging::after {
+#d1-divider.is-dragging::after,
+#d2-divider:hover::after,
+#d2-divider.is-dragging::after {
   background: var(--border-bright);
   height: 64px;
   width: 3px;

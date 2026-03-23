@@ -314,10 +314,10 @@
         <h2 class="demo-h">Claude Cowork</h2>
         <p class="demo-sub" style="margin-bottom:1.2rem">The Agent Action Loop</p>
 
-        <div style="display:grid;grid-template-columns:1fr 1.15fr;gap:1.4rem;flex:1;min-height:0">
+        <div style="display:flex;gap:0;flex:1;min-height:0">
 
           <!-- ── Left: Action Loop stages ─────────────────────────────── -->
-          <div style="display:flex;flex-direction:column;justify-content:center;gap:0">
+          <div style="display:flex;flex-direction:column;justify-content:center;gap:0;flex:1 1 0;min-width:180px;padding-right:0.7rem">
 
             <div
               style="display:grid;grid-template-columns:2rem 1fr;gap:0.8rem;align-items:start;background:var(--surface);border:1px solid rgba(42,92,63,0.14);border-radius:8px;padding:0.8rem 1rem">
@@ -378,8 +378,11 @@
 
           </div>
 
+          <!-- ── Drag divider ────────────────────────────────────────── -->
+          <div id="d2-divider"></div>
+
           <!-- ── Right: Cowork UI schematic ───────────────────────────── -->
-          <div style="display:flex;flex-direction:column;gap:0.8rem;min-height:0">
+          <div style="display:flex;flex-direction:column;gap:0.8rem;min-height:0;flex:1.65 1 0;min-width:260px;padding-left:0.7rem">
 
             <!-- Cowork interface mockup -->
             <div
@@ -400,14 +403,13 @@
                 <div style="font-size:0.68rem;font-weight:600;color:var(--purple);opacity:0.65;margin-bottom:0.25rem">
                   Chat — your instruction</div>
                 <div style="font-family:var(--mono);font-size:0.72rem;color:var(--text-muted);line-height:1.6">
-                  <span style="color:var(--purple);opacity:0.85">You are helping faculty prepare for a workshop on AI in
-                    education.</span><br><br>
-                  Create a one-page briefing document for undergraduate students covering:<br><br>
-                  1. What AI agents can and cannot do in academic contexts<br>
-                  2. Three concrete guidelines for ethical AI use in submitted work<br>
-                  3. What academic integrity means in the age of autonomous agents<br><br>
-                  <span style="color:var(--purple);opacity:0.6">Format with clear sections and practical examples. Save
-                    as a .docx file.</span>
+                  <span style="color:var(--purple);opacity:0.85">Today's audience is mixed: undergraduate students and teaching faculty attending a workshop on AI in education.</span><br><br>
+                  Prepare a complete workshop pack. Produce four files:<br><br>
+                  1. <span style="color:var(--text);opacity:0.8">student_briefing.docx</span> — what AI agents can and cannot do in academic work, and three concrete guidelines for ethical use<br>
+                  2. <span style="color:var(--text);opacity:0.8">faculty_slides.pptx</span> — 5 slides on the implications of agentic AI for course design and assessment<br>
+                  3. <span style="color:var(--text);opacity:0.8">integrity_rubric.xlsx</span> — a self-assessment checklist students can use to evaluate their own AI use<br>
+                  4. <span style="color:var(--text);opacity:0.8">stats_summary.html</span> — key adoption statistics formatted for on-screen display<br><br>
+                  <span style="color:var(--purple);opacity:0.6">Use real data where available. Keep each file practical and immediately usable.</span>
                 </div>
               </div>
 
@@ -417,40 +419,48 @@
                   Progress — agent plan</div>
                 <div style="display:flex;flex-direction:column;gap:0.22rem">
                   <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.74rem;color:var(--text-muted)">
-                    <span style="color:var(--purple)">✓</span> Read task and workspace files
+                    <span style="color:var(--purple)">✓</span> Read task, scan workspace, build context
                   </div>
                   <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.74rem;color:var(--text-muted)">
-                    <span style="color:var(--purple)">✓</span> Plan document structure
+                    <span style="color:var(--purple)">✓</span> Plan four-file output structure
                   </div>
-                  <div
-                    style="display:flex;align-items:center;gap:0.4rem;font-size:0.74rem;color:var(--purple);font-weight:500">
-                    <span>◌</span> Write and format the briefing
+                  <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.74rem;color:var(--purple);font-weight:500">
+                    <span>◌</span> Write student_briefing.docx
                   </div>
-                  <div
-                    style="display:flex;align-items:center;gap:0.4rem;font-size:0.74rem;color:var(--text-muted);opacity:0.38">
-                    <span>◌</span> Save as student_briefing.docx
+                  <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.74rem;color:var(--text-muted);opacity:0.38">
+                    <span>◌</span> Build faculty_slides.pptx
+                  </div>
+                  <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.74rem;color:var(--text-muted);opacity:0.38">
+                    <span>◌</span> Create integrity_rubric.xlsx
+                  </div>
+                  <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.74rem;color:var(--text-muted);opacity:0.38">
+                    <span>◌</span> Render stats_summary.html
                   </div>
                 </div>
               </div>
 
-              <!-- Workspace / Mostar -->
+              <!-- Workspace / output -->
               <div style="padding:0.6rem 0.9rem;flex-shrink:0">
-                <div style="font-size:0.68rem;font-weight:600;color:var(--purple);opacity:0.65;margin-bottom:0.28rem">
+                <div style="font-size:0.68rem;font-weight:600;color:var(--purple);opacity:0.65;margin-bottom:0.4rem">
                   Workspace — output</div>
-                <div style="font-size:0.74rem;color:var(--text-muted);font-style:italic;opacity:0.45">file will appear
-                  here&hellip;</div>
+                <div style="display:flex;flex-direction:column;gap:0.2rem">
+                  <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.72rem;color:var(--text-muted);opacity:0.35">
+                    <span style="font-family:var(--mono);color:var(--cyan);opacity:0.7">.docx</span> student_briefing.docx
+                  </div>
+                  <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.72rem;color:var(--text-muted);opacity:0.35">
+                    <span style="font-family:var(--mono);color:var(--amber);opacity:0.7">.pptx</span> faculty_slides.pptx
+                  </div>
+                  <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.72rem;color:var(--text-muted);opacity:0.35">
+                    <span style="font-family:var(--mono);color:var(--green);opacity:0.7">.xlsx</span> integrity_rubric.xlsx
+                  </div>
+                  <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.72rem;color:var(--text-muted);opacity:0.35">
+                    <span style="font-family:var(--mono);color:var(--purple);opacity:0.7">.html</span> stats_summary.html
+                  </div>
+                </div>
               </div>
 
             </div>
 
-            <!-- Note -->
-            <div
-              style="background:var(--purple-dim);border:1px solid rgba(42,92,63,0.15);border-radius:8px;padding:0.85rem 1rem;flex-shrink:0">
-              <div style="font-size:0.75rem;font-weight:600;color:var(--purple);opacity:0.65;margin-bottom:0.3rem">Note
-              </div>
-              <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.52">This presentation was produced by
-                the same loop. One Cowork session, no code written by hand.</div>
-            </div>
 
           </div>
 
