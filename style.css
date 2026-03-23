@@ -38,7 +38,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font);
-  font-size: clamp(15px, 1.1vw, 22px);
+  font-size: clamp(16px, 1.2vw, 22px);
 }
 
 /* ─── Ambient Background ─────────────────────────────────────────────  */
