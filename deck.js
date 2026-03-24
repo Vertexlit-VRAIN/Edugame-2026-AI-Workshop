@@ -307,12 +307,83 @@
     if (currentId === 's3' && !s3Revealed) revealS3();
   });
 
+  /* ── Slide 6 · Particle canvas ───────────────────────────────────────  */
+  (function () {
+    var canvas = document.getElementById('s6-canvas');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var raf = null;
+    var particles = [];
+    var COLORS = ['#5de4c7', '#7b9fd4', '#f4845f'];
+    var COUNT = 55;
+
+    function resize() {
+      canvas.width  = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
+
+    function initParticles() {
+      particles = [];
+      for (var i = 0; i < COUNT; i++) {
+        particles.push({
+          x:        Math.random() * canvas.width,
+          y:        Math.random() * canvas.height,
+          vx:       (Math.random() - 0.5) * 0.45,
+          vy:       (Math.random() - 0.5) * 0.45,
+          r:        Math.random() * 1.8 + 0.7,
+          color:    COLORS[Math.floor(Math.random() * COLORS.length)],
+          opacity:  Math.random() * 0.35 + 0.08,
+          dOpacity: (Math.random() - 0.5) * 0.004
+        });
+      }
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (var i = 0; i < particles.length; i++) {
+        var p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.opacity += p.dOpacity;
+        if (p.opacity > 0.5)  p.dOpacity = -Math.abs(p.dOpacity);
+        if (p.opacity < 0.06) p.dOpacity =  Math.abs(p.dOpacity);
+        if (p.x < 0)            p.x = canvas.width;
+        if (p.x > canvas.width) p.x = 0;
+        if (p.y < 0)             p.y = canvas.height;
+        if (p.y > canvas.height) p.y = 0;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle   = p.color;
+        ctx.globalAlpha = p.opacity;
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+      raf = requestAnimationFrame(draw);
+    }
+
+    window._s6Start = function () {
+      resize();
+      initParticles();
+      if (raf) cancelAnimationFrame(raf);
+      draw();
+      canvas.classList.add('active');
+    };
+
+    window._s6Stop = function () {
+      canvas.classList.remove('active');
+      if (raf) { cancelAnimationFrame(raf); raf = null; }
+      setTimeout(function () { ctx.clearRect(0, 0, canvas.width, canvas.height); }, 1400);
+    };
+  }());
+
   /* ── Slide engine ─────────────────────────────────────────────────────  */
   function goTo(id) {
     if (id === currentId) return;
     var from = document.getElementById(currentId);
     var to = document.getElementById(id);
     if (!from || !to) return;
+
+    if (currentId === 's6' && window._s6Stop) window._s6Stop();
 
     from.classList.remove('active');
     to.classList.add('active');
@@ -321,6 +392,7 @@
     if (id === 'd1') d1Reset();
     if (id === 's3') resetS3();
     if (id === 's5') resetS5();
+    if (id === 's6' && window._s6Start) window._s6Start();
   }
 
   function updateCounter() {
