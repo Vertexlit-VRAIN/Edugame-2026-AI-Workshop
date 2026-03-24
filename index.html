@@ -256,7 +256,7 @@
               <span
                 style="font-size:0.85rem;font-weight:600;padding:0.2rem 0.6rem;border-radius:4px;background:var(--surface-2);border:1px solid var(--border);color:var(--text-muted)">System
                 1</span>
-              <span style="font-size:0.88rem;color:var(--text-muted)">Vague prompt</span>
+              <span style="font-size:0.88rem;color:var(--text-muted)">2 + 2 x 2 = 8</span>
             </div>
 
             <div
@@ -287,7 +287,7 @@
               <span
                 style="font-size:0.85rem;font-weight:600;padding:0.2rem 0.6rem;border-radius:4px;background:var(--cyan-dim);border:1px solid rgba(45,74,122,0.22);color:var(--cyan)">System
                 2</span>
-              <span style="font-size:0.88rem;color:var(--text-muted)">Structured prompt</span>
+              <span style="font-size:0.88rem;color:var(--text-muted)">2 + 2 x 2 = 6</span>
             </div>
 
             <div id="d1-prompt-b" onclick="d1TogglePrompt()"
@@ -420,14 +420,16 @@
                 <div style="font-size:0.82rem;font-weight:600;color:var(--purple);opacity:0.65;margin-bottom:0.25rem">
                   Chat — your instruction</div>
                 <div style="font-family:var(--mono);font-size:0.88rem;color:var(--text-muted);line-height:1.6">
-                  Prepare a complete workshop pack. Produce four files:<br><br>
-                  1. <span style="color:var(--text);opacity:0.8">student_briefing.docx</span> — what AI agents can and
+                  Prepare a complete workshop pack. Organize the outputs into the following folder structure:<br><br>
+                  <span style="color:var(--text);opacity:0.7">/workshop_pack/&nbsp; /students/&nbsp; /faculty/&nbsp; /assessment/&nbsp; /data/</span><br><br>
+                  Produce four files:<br><br>
+                  1. <span style="color:var(--text);opacity:0.8">/students/student_briefing.docx</span> — what AI agents can and
                   cannot do in academic work, and three concrete guidelines for ethical use<br>
-                  2. <span style="color:var(--text);opacity:0.8">faculty_slides.pptx</span> — 5 slides on the
+                  2. <span style="color:var(--text);opacity:0.8">/faculty/faculty_slides.pptx</span> — 5 slides on the
                   implications of agentic AI for course design and assessment<br>
-                  3. <span style="color:var(--text);opacity:0.8">integrity_rubric.xlsx</span> — a self-assessment
+                  3. <span style="color:var(--text);opacity:0.8">/assessment/integrity_rubric.xlsx</span> — a self-assessment
                   checklist students can use to evaluate their own AI use<br>
-                  4. <span style="color:var(--text);opacity:0.8">stats_summary.html</span> — key adoption statistics
+                  4. <span style="color:var(--text);opacity:0.8">/data/stats_summary.html</span> — key adoption statistics
                   formatted for on-screen display<br><br>
                   <span style="color:var(--purple);opacity:0.6">Use real data where available. Keep each file practical
                     and immediately usable.</span>
