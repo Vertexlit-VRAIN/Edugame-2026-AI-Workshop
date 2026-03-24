@@ -2,7 +2,7 @@
   'use strict';
 
   /* ─── Slide order ──────────────────────────────────────────────────── */
-  const LINEAR = ['s1', 's3', 's4', 's5'];
+  const LINEAR = ['s1', 's3', 's4', 's5', 's6'];
   const DEMO_SLIDES = { 1: 'd1', 2: 'd2', 3: 'd3' };
 
   let currentId = 's1';
@@ -252,6 +252,30 @@
     }, 180);
   }
 
+  /* ── Slide 5 (s5) hook reveal state ──────────────────────────────────  */
+  var s5Revealed = false;
+
+  function revealS5() {
+    s5Revealed = true;
+    var hook = document.getElementById('s5-hook');
+    var data = document.getElementById('s5-data');
+    if (hook) hook.classList.add('hidden');
+    if (data) data.classList.add('revealed');
+  }
+
+  function resetS5() {
+    s5Revealed = false;
+    var hook = document.getElementById('s5-hook');
+    var data = document.getElementById('s5-data');
+    if (hook) hook.classList.remove('hidden');
+    if (data) data.classList.remove('revealed');
+  }
+
+  // click on slide s5 while hook is showing also triggers reveal
+  document.getElementById('s5').addEventListener('click', function () {
+    if (currentId === 's5' && !s5Revealed) revealS5();
+  });
+
   /* ── Slide 2 (s3) hook reveal state ──────────────────────────────────  */
   var s3Revealed = false;
 
@@ -296,19 +320,21 @@
     updateCounter();
     if (id === 'd1') d1Reset();
     if (id === 's3') resetS3();
+    if (id === 's5') resetS5();
   }
 
   function updateCounter() {
     var el = document.getElementById('counter');
     var idx = LINEAR.indexOf(currentId);
     el.textContent = inDemoDetail
-      ? '\u2014\u2009/\u20094'
-      : (idx + 1) + '\u2009/\u20094';
+      ? '\u2014\u2009/\u20095'
+      : (idx + 1) + '\u2009/\u20095';
   }
 
   function next() {
     if (inDemoDetail) return;
     if (currentId === 's3' && !s3Revealed) { revealS3(); return; }
+    if (currentId === 's5' && !s5Revealed) { revealS5(); return; }
     var idx = LINEAR.indexOf(currentId);
     if (idx < LINEAR.length - 1) goTo(LINEAR[idx + 1]);
   }
