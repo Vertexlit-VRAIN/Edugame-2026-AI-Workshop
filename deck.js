@@ -400,7 +400,6 @@
   function next() {
     if (inDemoDetail) return;
     if (currentId === 's3' && !s3Revealed) { revealS3(); return; }
-    if (currentId === 's5' && !s5Revealed) { revealS5(); return; }
     var idx = LINEAR.indexOf(currentId);
     if (idx < LINEAR.length - 1) goTo(LINEAR[idx + 1]);
   }
