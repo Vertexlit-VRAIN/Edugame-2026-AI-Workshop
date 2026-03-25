@@ -147,10 +147,6 @@
     box.innerHTML = '';
 
     if (panel === 'b') {
-      /* Collapse the prompt box to free vertical space for the response */
-      var promptB = document.getElementById('d1-prompt-b');
-      if (promptB) promptB.classList.add('collapsed');
-
       /* Phase 1 — thinking block */
       var thinkWrap = document.createElement('div');
       thinkWrap.className = 'd1-think';
@@ -215,8 +211,6 @@
       if (btn) btn.disabled = false;
       if (box) box.innerHTML = '<span style="opacity:0.32;font-style:italic">Response will appear here\u2026</span>';
     });
-    var promptB = document.getElementById('d1-prompt-b');
-    if (promptB) promptB.classList.remove('collapsed');
   }
 
   /* ── Ring rotation ────────────────────────────────────────────────────  */
@@ -428,10 +422,7 @@
   window.next = next;
   window.backToRing = backToRing;
 
-  window.d1TogglePrompt = function () {
-    var promptB = document.getElementById('d1-prompt-b');
-    if (promptB) promptB.classList.toggle('collapsed');
-  };
+  window.d1TogglePrompt = function () {};
 
   /* ── Ring item clicks ─────────────────────────────────────────────────  */
   function selectFrontItem(el) {
